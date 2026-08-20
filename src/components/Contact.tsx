@@ -108,14 +108,14 @@ export default function Contact() {
               </Reveal>
 
               <Reveal delay={360}>
-                <div className="group border border-cream/10 bg-ink2/50 px-6 py-5 flex items-center justify-between gap-4 hover:border-lime/50 transition-colors duration-300" data-hover>
-                  <div>
-                    <p className="font-term text-[9px] tracking-[0.3em] text-sage">LOKATSIYA</p>
-                    <p className="font-term text-sm md:text-base text-cream">
+                <div className="group border border-cream/10 bg-ink2/50 px-5 sm:px-6 py-5 flex flex-wrap items-center justify-between gap-x-4 gap-y-2 hover:border-lime/50 transition-colors duration-300" data-hover>
+                  <div className="min-w-0">
+                    <p className="font-term text-[9px] tracking-[0.2em] sm:tracking-[0.3em] text-sage">LOKATSIYA</p>
+                    <p className="font-term text-[13px] sm:text-sm md:text-base text-cream">
                       Hazorasp, Xorazm <span className="text-sage">→</span> ish: Urgench
                     </p>
                   </div>
-                  <span className="font-term text-[10px] text-sage tracking-[0.2em] tabular-nums shrink-0">TAS {time}</span>
+                  <span className="font-term text-[10px] text-sage tracking-[0.12em] sm:tracking-[0.2em] tabular-nums shrink-0">TAS {time}</span>
                 </div>
               </Reveal>
             </div>
@@ -263,10 +263,10 @@ export default function Contact() {
         </div>
         <div className="border-t border-cream/10">
           <div className="mx-auto max-w-7xl px-5 md:px-8 py-5 flex flex-wrap items-center justify-between gap-3">
-            <p className="font-term text-[10px] tracking-[0.2em] text-cream/40">
-              © 2026 ABROR RAXIMBAYEV — HAZORASP → URGENCH
+            <p className="font-term text-[9px] sm:text-[10px] tracking-[0.1em] sm:tracking-[0.2em] text-cream/40">
+              © 2026 ABROR RAXIMBAYEV <span className="hidden sm:inline">— HAZORASP → URGENCH</span>
             </p>
-            <p className="font-term text-[10px] tracking-[0.2em] text-cream/40">
+            <p className="font-term text-[9px] sm:text-[10px] tracking-[0.1em] sm:tracking-[0.2em] text-cream/40">
               KOFE VA <span className="text-lime">KOTLIN</span> BILAN QURILDI
             </p>
           </div>

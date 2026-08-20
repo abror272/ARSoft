@@ -43,10 +43,10 @@ export default function About() {
                 />
                 <div className="absolute inset-0 bg-lime/10 mix-blend-overlay pointer-events-none" />
                 <div className="absolute bottom-0 inset-x-0 bg-ink/85 backdrop-blur px-4 sm:px-5 py-3 flex items-center justify-between gap-3 border-t border-cream/10">
-                  <p className="font-term text-[10px] tracking-[0.2em] sm:tracking-[0.25em] text-cream/80">
+                  <p className="font-term text-[9px] sm:text-[10px] tracking-[0.12em] sm:tracking-[0.25em] text-cream/80 truncate">
                     ABROR RAXIMBAYEV
                   </p>
-                  <p className="font-term text-[10px] tracking-[0.15em] sm:tracking-[0.2em] text-sage">HAZORASP / URGENCH</p>
+                  <p className="font-term text-[9px] sm:text-[10px] tracking-[0.08em] sm:tracking-[0.2em] text-sage shrink-0">HAZORASP / URGENCH</p>
                 </div>
               </div>
               <span className="absolute -top-5 -right-3 sm:-right-4 rotate-6 bg-coral text-cream font-display font-bold text-[11px] sm:text-xs px-3 py-1.5 shadow-lg">
@@ -143,7 +143,7 @@ export default function About() {
             {/* hozir nima bilan bandman */}
             <Reveal delay={480}>
               <div className="mt-8 border border-lime/25 bg-lime/[0.04] px-5 sm:px-6 py-6">
-                <p className="font-term text-[10px] tracking-[0.3em] text-lime mb-4 flex items-center gap-3">
+                <p className="font-term text-[10px] tracking-[0.12em] sm:tracking-[0.3em] text-lime mb-4 flex items-center gap-3">
                   <span className="relative flex h-2 w-2">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-lime opacity-60" />
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-lime" />

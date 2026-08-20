@@ -106,7 +106,7 @@ export default function App() {
           <p className="font-display font-black text-4xl md:text-6xl text-cream tracking-tight">
             ABROR<span className="text-lime">.OS</span>
           </p>
-          <p className="font-term text-[11px] text-sage tracking-[0.3em] mt-2 mb-8">
+          <p className="font-term text-[11px] text-sage tracking-[0.15em] sm:tracking-[0.3em] mt-2 mb-8">
             PORTFOLIO INTERFEYSI — XORAZM BUILD
           </p>
           <div className="font-term text-xs md:text-sm space-y-1.5 min-h-[9.5rem]">
@@ -123,7 +123,7 @@ export default function App() {
           <div className="mt-6 h-[3px] bg-cream/10 overflow-hidden">
             <div className="h-full bg-lime transition-all duration-200" style={{ width: `${bootProgress}%` }} />
           </div>
-          <div className="flex justify-between items-center mt-3">
+          <div className="flex flex-wrap justify-between items-center gap-2 mt-3">
             <p className="font-term text-[11px] text-sage tabular-nums">YUKLANMOQDA... {Math.min(99, Math.floor(bootProgress))}%</p>
             <button
               onClick={() => setBooted(true)}

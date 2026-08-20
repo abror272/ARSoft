@@ -163,10 +163,10 @@ export default function Projects() {
       {sel && (
         <div className="fixed inset-0 z-[80] flex items-center justify-center p-5" role="dialog" aria-modal="true">
           <div className="absolute inset-0 bg-ink/85 backdrop-blur-sm" onClick={() => setSel(null)} />
-          <div className="relative bg-ink2 border border-lime/30 max-w-2xl w-full p-7 md:p-10 max-h-[85vh] overflow-y-auto animate-[modalin_0.3s_ease]">
+          <div className="relative bg-ink2 border border-lime/30 max-w-2xl w-full p-5 sm:p-7 md:p-10 max-h-[85vh] overflow-y-auto animate-[modalin_0.3s_ease]">
             <div className="flex items-start justify-between gap-6">
               <div>
-                <p className="font-term text-[11px] tracking-[0.3em] text-coral mb-3">
+                <p className="font-term text-[10px] sm:text-[11px] tracking-[0.12em] sm:tracking-[0.3em] text-coral mb-3">
                   {sel.num} / {sel.year} — <span className={BADGE_STYLE[sel.badge].split(" ")[1]}>{sel.badge}</span>
                 </p>
                 <h3 className="font-display font-black text-2xl sm:text-3xl md:text-4xl leading-tight text-cream">{sel.title}</h3>

@@ -45,7 +45,7 @@ export default function Hero() {
       <div className="relative mx-auto max-w-7xl w-full px-5 md:px-8 grid lg:grid-cols-[1fr_auto] items-center gap-14">
         <div>
           {/* meta qator */}
-          <div style={{ transitionDelay: "100ms" }} className={`flex flex-wrap items-center gap-x-6 gap-y-2 font-term text-[11px] tracking-[0.25em] mb-8 ${el}`}>
+          <div style={{ transitionDelay: "100ms" }} className={`flex flex-wrap items-center gap-x-4 gap-y-2 font-term text-[10px] sm:text-[11px] tracking-[0.12em] sm:tracking-[0.25em] mb-8 ${el}`}>
             <span className="flex items-center gap-2 text-lime">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-lime opacity-60" />
@@ -108,9 +108,9 @@ export default function Hero() {
 
           <div style={{ transitionDelay: "550ms" }} className={`mt-14 grid grid-cols-3 max-w-lg divide-x divide-cream/10 border-y border-cream/10 ${el}`}>
             {STATS.map((s) => (
-              <div key={s.l} className="px-4 md:px-6 py-5 hover:bg-cream/[0.03] transition-colors" data-hover>
-                <p className="font-display font-black text-2xl md:text-4xl text-lime">{s.v}</p>
-                <p className="font-term text-[9px] md:text-[10px] tracking-[0.25em] text-sage mt-1.5">{s.l}</p>
+              <div key={s.l} className="px-3 sm:px-4 md:px-6 py-4 sm:py-5 hover:bg-cream/[0.03] transition-colors" data-hover>
+                <p className="font-display font-black text-xl sm:text-2xl md:text-4xl text-lime">{s.v}</p>
+                <p className="font-term text-[8px] sm:text-[9px] md:text-[10px] tracking-[0.1em] sm:tracking-[0.25em] text-sage mt-1.5">{s.l}</p>
               </div>
             ))}
           </div>
@@ -165,10 +165,10 @@ export default function Hero() {
         </div>
       </div>
 
-      <div style={{ transitionDelay: "700ms" }} className={`absolute bottom-8 left-5 md:left-8 flex items-center gap-4 ${el}`}>
+      <div style={{ transitionDelay: "700ms" }} className={`absolute bottom-6 md:bottom-8 left-5 md:left-8 flex items-center gap-3 ${el}`}>
         <ArrowDown className="w-4 h-4 text-lime bounce-slow" />
-        <p className="font-term text-[10px] tracking-[0.3em] text-sage">
-          PASTGA — <span className="text-cream/70">QIZIQARLI QISMI</span>
+        <p className="font-term text-[9px] md:text-[10px] tracking-[0.18em] md:tracking-[0.3em] text-sage">
+          PASTGA <span className="text-cream/70 hidden sm:inline">— QIZIQARLI QISMI</span>
         </p>
       </div>
     </section>

@@ -42,10 +42,9 @@ export function SectionHead({
   return (
     <div ref={ref} className={className}>
       {label && (
-        <p className="font-term text-[11px] md:text-xs tracking-[0.35em] text-coral mb-4">
-          <span className="text-sage">{num}</span> // {label}
-        </p>
-      )}
+      <p className="font-term text-[11px] md:text-xs tracking-[0.18em] sm:tracking-[0.35em] text-coral mb-4">
+        <span className="text-sage">{num}</span> // {label}
+      </p>      )}
       <h2
         className={`font-display font-bold leading-[1.14] text-[26px] sm:text-4xl md:text-5xl lg:text-6xl ${
           outline ? "text-outline" : "text-cream"

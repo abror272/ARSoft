@@ -32,7 +32,7 @@ export function SectionHead({
   className = "",
 }: {
   num: string;
-  label: string;
+  label?: string;
   title: string;
   outline?: boolean;
   className?: string;
@@ -41,11 +41,13 @@ export function SectionHead({
   const decoded = useScramble(title, inView, 22);
   return (
     <div ref={ref} className={className}>
-      <p className="font-term text-[11px] md:text-xs tracking-[0.35em] text-coral mb-4">
-        <span className="text-sage">{num}</span> // {label}
-      </p>
+      {label && (
+        <p className="font-term text-[11px] md:text-xs tracking-[0.35em] text-coral mb-4">
+          <span className="text-sage">{num}</span> // {label}
+        </p>
+      )}
       <h2
-        className={`font-display font-bold leading-[1.08] text-3xl sm:text-5xl lg:text-6xl ${
+        className={`font-display font-bold leading-[1.14] text-[26px] sm:text-4xl md:text-5xl lg:text-6xl ${
           outline ? "text-outline" : "text-cream"
         }`}
       >

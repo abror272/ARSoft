@@ -70,7 +70,7 @@ export function GlitchOverlay() {
         />
       ))}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
-        <p className="font-display font-black text-4xl md:text-7xl text-coral tracking-tight">
+        <p className="font-display font-black text-[7vw] sm:text-4xl md:text-7xl text-coral tracking-tight px-4">
           TIZIMGA KIRILDI
         </p>
         <p className="font-term text-[10px] md:text-xs text-lime tracking-[0.4em] mt-4">

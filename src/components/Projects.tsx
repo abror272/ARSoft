@@ -169,7 +169,7 @@ export default function Projects() {
                 <p className="font-term text-[11px] tracking-[0.3em] text-coral mb-3">
                   {sel.num} / {sel.year} — <span className={BADGE_STYLE[sel.badge].split(" ")[1]}>{sel.badge}</span>
                 </p>
-                <h3 className="font-display font-black text-3xl md:text-4xl text-cream">{sel.title}</h3>
+                <h3 className="font-display font-black text-2xl sm:text-3xl md:text-4xl leading-tight text-cream">{sel.title}</h3>
               </div>
               <button
                 onClick={() => setSel(null)}

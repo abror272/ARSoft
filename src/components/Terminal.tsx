@@ -249,10 +249,10 @@ export default function Terminal({
                   key={i}
                   className={
                     l.t === "in"
-                      ? "text-cream whitespace-pre-wrap"
+                      ? "text-cream whitespace-pre-wrap break-words"
                       : l.t === "sys"
-                        ? "text-sage whitespace-pre-wrap"
-                        : "text-lime/90 whitespace-pre-wrap"
+                        ? "text-sage whitespace-pre-wrap break-words"
+                        : "text-lime/90 whitespace-pre-wrap break-words"
                   }
                 >
                   {l.t === "in" && <span className="text-coral">abror@xorazm:~$ </span>}

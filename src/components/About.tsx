@@ -12,6 +12,13 @@ const FACTS = [
   { k: "MAQSAD", v: "Kuchli Android dasturchisi" },
 ];
 
+const PRINCIPLES = [
+  { n: "01", t: "Halol baholash", d: "Ko'nikma foizlarim — reklama emas, haqiqat." },
+  { n: "02", t: "Amal birinchi", d: "O'rgangan narsamni darhol kodda sinab ko'raman." },
+  { n: "03", t: "Kichik qadamlar", d: "Har kuni biroz oldinga — lekin to'xtamasdan." },
+  { n: "04", t: "Savoldan qo'rqmaslik", d: "Eng tez o'sish — savol berish orqali keladi." },
+];
+
 const NOW = [
   { dot: "bg-lime", text: "Kotlin: Android asoslarini chuqurlashtiryapman" },
   { dot: "bg-coral", text: "Rust: ownership va borrowing — eng boshidan" },
@@ -23,7 +30,7 @@ export default function About() {
   return (
     <section id="about" className="relative py-20 md:py-32 scroll-mt-20 bg-ink2/40 border-y border-cream/5">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
-        <div className="grid lg:grid-cols-[minmax(0,26rem)_1fr] gap-14 lg:gap-20 items-start">
+        <div className="grid lg:grid-cols-[minmax(0,26rem)_1fr] gap-12 lg:gap-20 items-start">
           {/* portret */}
           <Reveal>
             <div className="relative group" data-hover>
@@ -35,14 +42,14 @@ export default function About() {
                   className="w-full h-auto object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.05]"
                 />
                 <div className="absolute inset-0 bg-lime/10 mix-blend-overlay pointer-events-none" />
-                <div className="absolute bottom-0 inset-x-0 bg-ink/85 backdrop-blur px-5 py-3 flex items-center justify-between border-t border-cream/10">
-                  <p className="font-term text-[10px] tracking-[0.25em] text-cream/80">
+                <div className="absolute bottom-0 inset-x-0 bg-ink/85 backdrop-blur px-4 sm:px-5 py-3 flex items-center justify-between gap-3 border-t border-cream/10">
+                  <p className="font-term text-[10px] tracking-[0.2em] sm:tracking-[0.25em] text-cream/80">
                     ABROR RAXIMBAYEV
                   </p>
-                  <p className="font-term text-[10px] tracking-[0.2em] text-sage">HAZORASP / URGENCH</p>
+                  <p className="font-term text-[10px] tracking-[0.15em] sm:tracking-[0.2em] text-sage">HAZORASP / URGENCH</p>
                 </div>
               </div>
-              <span className="absolute -top-5 -right-4 rotate-6 bg-coral text-cream font-display font-bold text-xs px-3 py-1.5 shadow-lg">
+              <span className="absolute -top-5 -right-3 sm:-right-4 rotate-6 bg-coral text-cream font-display font-bold text-[11px] sm:text-xs px-3 py-1.5 shadow-lg">
                 UrDU '25+
               </span>
             </div>
@@ -50,42 +57,48 @@ export default function About() {
 
           {/* matn */}
           <div>
-            <SectionHead num="01" label="KIM MEN" title="HAQIMDA" />
+            <SectionHead num="01" title="O'ZIM HAQIMDA" />
 
             <Reveal delay={120}>
-              <p className="mt-7 text-cream/75 leading-relaxed text-base md:text-lg">
+              <p className="mt-7 text-cream/75 leading-relaxed text-[15px] md:text-lg">
                 Men <span className="text-cream font-semibold">Abror Raximbayev</span> — Xorazmning
-                Hazorasp tumanidanman, hozirda Urgenchda yashayman va ishlayman. Eng ko'p vaqt
-                ajratayotgan yo'nalishim — <span className="text-lime font-semibold">Kotlin</span> va
-                Android ilovalari. Urganch davlat universitetida Software Engineering yo'nalishida
-                o'qiyman. Men uchun kod yozish shunchaki ish emas — muammoni topib, uni chiroyli
-                yechish usuli.
+                Hazorasp tumanida tug'ilib o'sgan, bugun Urgenchda yashab, o'qib va ishlab yurgan
+                dasturchiman. Eng ko'p vaqtimni{" "}
+                <span className="text-lime font-semibold">Kotlin va Android</span> olamiga ajrataman:
+                g'oyadan tayyor ilovagacha bo'lgan yo'l — interfeys, mantiq va xotira bilan ishlash —
+                menga haqiqiy zavq beradi. Urganch davlat universitetida Software Engineering
+                yo'nalishida tahsil olaman; darsda o'rgangan narsani kechqurun kodda sinash — menga
+                eng tabiiy ish tartibi.
               </p>
             </Reveal>
             <Reveal delay={200}>
-              <p className="mt-5 text-cream/75 leading-relaxed text-base md:text-lg">
-                Mehnat faoliyatimni <span className="text-cream font-semibold">BR Tech</span> kompaniyasida
-                stajyor bo'lib boshlaganman — bir yil davomida haqiqiy jamoada ishlashni, muddatga
-                ulgurishni va sifatni tushirmaslikni o'rgandim. Hozir{" "}
+              <p className="mt-5 text-cream/75 leading-relaxed text-[15px] md:text-lg">
+                Mehnat yo'limni <span className="text-cream font-semibold">BR Tech</span>'da stajyor
+                bo'lib boshlaganman. Bir yil davomida haqiqiy jamoada ishlash madaniyatini
+                o'zlashtirdim: vazifani muddatida yakunlash, kichik detallarga ham e'tibor berish va
+                natija uchun shaxsan javob berish — shu uch narsa menga eng katta maktab bo'ldi. Hozir{" "}
                 <span className="text-cream font-semibold">ARYFMA</span>'da texnik yordam mutaxassisi
-                bo'lib ishlayman: ichki tizimlar, xodimlarga ko'mak va umuman infratuzilma — barchasi
-                menga ishonib topshirilgan.
+                bo'lib ishlayman: xodimlarning kunlik texnik muammolarini hal qilaman, ichki
+                tizimlarni tartibda saqlayman va murakkab ko'ringan narsadan oddiy yechim topishni
+                o'rganyapman.
               </p>
             </Reveal>
             <Reveal delay={280}>
-              <p className="mt-5 text-cream/75 leading-relaxed text-base md:text-lg">
-                Til bilish darajam haqida ochiq aytaman:{" "}
-                <span className="text-coral font-semibold">Kotlin — asosiy yo'nalishim</span>, unda
-                ancha erkinman; <span className="text-coral font-semibold">Rust</span> esa endigina
-                boshlangan sarguzasht. Hammasini bilaman deb ayta olmayman — lekin har hafta yangi
-                narsa o'rganib, o'sha bilimni amalda sinab ko'raman. Maqsadim aniq: kuchli Android
-                dasturchisi bo'lish va Rust'da mustahkam poydevor qurish.
+              <p className="mt-5 text-cream/75 leading-relaxed text-[15px] md:text-lg">
+                O'zim haqimda eng muhimi shu:{" "}
+                <span className="text-lime font-semibold">o'rganishdan to'xtamayman</span>. Kotlin'da
+                asta-sekin chuqurroqqa boryapman,{" "}
+                <span className="text-coral font-semibold">Rust</span> esa menga dasturlashga butunlay
+                yangi nigoh berayotgan yangi sarguzashtim. Bilimimni bo'yab ko'rsatishni yoqtirmayman —
+                qayerda kuchli bo'lsam aytaman, qayerda endi boshlagan bo'lsam buni ham yashirmayman.
+                Maqsadim aniq: Android sohasida ishonchli mutaxassis bo'lish va har yili o'zimdan
+                kuchliroq versiyamni qurish.
               </p>
             </Reveal>
 
             {/* faktlar jadvali */}
             <Reveal delay={360}>
-              <div className="mt-10 grid sm:grid-cols-2 border border-cream/10">
+              <div className="mt-9 grid sm:grid-cols-2 border border-cream/10">
                 {FACTS.map((f, i) => (
                   <div
                     key={f.k}
@@ -95,15 +108,41 @@ export default function About() {
                     } ${i < 5 ? "border-b border-cream/10" : ""} ${i === 4 ? "sm:border-b-0" : ""}`}
                   >
                     <p className="font-term text-[9px] tracking-[0.3em] text-sage">{f.k}</p>
-                    <p className="font-semibold text-cream mt-1">{f.v}</p>
+                    <p className="font-semibold text-cream mt-1 text-[15px]">{f.v}</p>
                   </div>
                 ))}
               </div>
             </Reveal>
 
-            {/* hozir nima qilyapman */}
-            <Reveal delay={440}>
-              <div className="mt-8 border border-lime/25 bg-lime/[0.04] px-6 py-6">
+            {/* prinsiplar */}
+            <Reveal delay={420}>
+              <div className="mt-8">
+                <p className="font-term text-[10px] tracking-[0.3em] text-sage mb-4">
+                  <span className="text-coral">//</span> ISH PRINSIPLARIM
+                </p>
+                <div className="grid sm:grid-cols-2 gap-3">
+                  {PRINCIPLES.map((p) => (
+                    <div
+                      key={p.n}
+                      data-hover
+                      className="group border border-cream/10 bg-ink/40 px-5 py-4 flex items-start gap-4 hover:border-lime/40 hover:bg-ink2 transition-all duration-300"
+                    >
+                      <span className="font-display font-black text-2xl text-outline-cream group-hover:text-outline transition-all duration-300 leading-none">
+                        {p.n}
+                      </span>
+                      <span>
+                        <span className="block font-display font-bold text-sm text-cream">{p.t}</span>
+                        <span className="block text-cream/55 text-[13px] mt-1 leading-relaxed">{p.d}</span>
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
+
+            {/* hozir nima bilan bandman */}
+            <Reveal delay={480}>
+              <div className="mt-8 border border-lime/25 bg-lime/[0.04] px-5 sm:px-6 py-6">
                 <p className="font-term text-[10px] tracking-[0.3em] text-lime mb-4 flex items-center gap-3">
                   <span className="relative flex h-2 w-2">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-lime opacity-60" />

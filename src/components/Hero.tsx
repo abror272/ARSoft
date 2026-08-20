@@ -58,12 +58,12 @@ export default function Hero() {
           </div>
 
           <h1 className="select-none">
-            <span className="block font-display font-black text-[13.5vw] sm:text-7xl lg:text-[6.5rem] leading-[0.98] tracking-tight text-cream">
+            <span className="block font-display font-black text-[9.5vw] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5rem] leading-[1.02] tracking-tight text-cream">
               {l1}
             </span>
             <span
               data-text="RAXIMBAYEV"
-              className="glitch block font-display font-black text-[13.5vw] sm:text-7xl lg:text-[6.5rem] leading-[0.98] tracking-tight text-outline mt-1"
+              className="glitch block font-display font-black text-[9.5vw] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5rem] leading-[1.02] tracking-tight text-outline mt-1"
             >
               {l2}
             </span>
@@ -81,27 +81,27 @@ export default function Hero() {
             kod yozaman va har kuni biroz oldinga siljiyman.
           </p>
 
-          <div style={{ transitionDelay: "450ms" }} className={`mt-9 flex flex-wrap gap-4 ${el}`}>
-            <Magnetic>
+          <div style={{ transitionDelay: "450ms" }} className={`mt-8 md:mt-9 flex flex-col sm:flex-row gap-3 sm:gap-4 ${el}`}>
+            <Magnetic className="w-full sm:w-auto">
               <a
                 href="#projects"
                 data-hover
-                className="group inline-flex items-center gap-3 bg-lime text-ink font-display font-bold text-sm px-7 py-4 hover:bg-coral hover:text-cream transition-colors duration-300"
+                className="group inline-flex w-full sm:w-auto items-center justify-center gap-2.5 sm:gap-3 bg-lime text-ink font-display font-bold text-xs sm:text-sm px-5 py-3.5 sm:px-7 sm:py-4 hover:bg-coral hover:text-cream transition-colors duration-300"
               >
                 ISHLARIM BILAN TANISHING
-                <ArrowDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
+                <ArrowDown className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-y-0.5 transition-transform" />
               </a>
             </Magnetic>
-            <Magnetic>
+            <Magnetic className="w-full sm:w-auto">
               <a
                 href="https://www.linkedin.com/in/abrorraximbayev-909512387"
                 target="_blank"
                 rel="noreferrer"
                 data-hover
-                className="group inline-flex items-center gap-3 border border-cream/25 text-cream font-display font-bold text-sm px-7 py-4 hover:border-lime hover:text-lime transition-colors duration-300"
+                className="group inline-flex w-full sm:w-auto items-center justify-center gap-2.5 sm:gap-3 border border-cream/25 text-cream font-display font-bold text-xs sm:text-sm px-5 py-3.5 sm:px-7 sm:py-4 hover:border-lime hover:text-lime transition-colors duration-300"
               >
                 LINKEDIN
-                <ArrowUpRight className="w-4 h-4 group-hover:rotate-45 transition-transform duration-300" />
+                <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:rotate-45 transition-transform duration-300" />
               </a>
             </Magnetic>
           </div>

@@ -5,7 +5,7 @@ type Project = {
   num: string;
   title: string;
   year: string;
-  role: string;
+  badge: "SHAXSIY" | "EKSPERIMENT" | "ISH";
   desc: string;
   long: string;
   stack: string[];
@@ -15,43 +15,43 @@ type Project = {
 const PROJECTS: Project[] = [
   {
     num: "01",
-    title: "SAMO TRAVEL",
-    year: "2024",
-    role: "FULL-STACK",
-    desc: "O'zbekiston bo'ylab sayohat uchun interaktiv platforma: 3D xarita, real-time bronlash va AI maslahatchi.",
-    long: "Samarqanddan Xivagacha — 40 000+ foydalanuvchi sayohatini rejalashtirgan platforma. Mapbox GL ustida maxsus 3D qatlam, Stripe orqali xalqaro to'lovlar va LLM asosidagi marshrut maslahatchisi qurdim. Eng sevimli qism: offline rejimda ham ishlaydigan PWA xarita.",
-    stack: ["NEXT.JS", "TYPESCRIPT", "MAPBOX GL", "STRIPE", "POSTGRESQL"],
-    stat: { v: "40K+", l: "FOYDALANUVCHI" },
+    title: "VAQT KUZATUVCHI",
+    year: "2025",
+    badge: "SHAXSIY",
+    desc: "Jetpack Compose'da yozilgan vaqt kuzatuvchi ilova: Pomodoro taymer, kunlik statistika va Room bazada saqlanadigan odatlar.",
+    long: "O'zim uchun boshlangan loyiha — dars, ish va Rust o'rganish orasida vaqtni boshqarish qiyinlashgach, o'z vositamni yozdim. Compose'da toza MVVM arxitektura, Room bilan offline saqlash va Material 3 dinamik ranglar. Eng ko'p o'rgangan narsam: state hoisting va side-effect'larni to'g'ri joylashtirish.",
+    stack: ["KOTLIN", "JETPACK COMPOSE", "ROOM", "MVVM", "MATERIAL 3"],
+    stat: { v: "100%", l: "KOTLIN" },
   },
   {
     num: "02",
-    title: "BILIM EDU",
-    year: "2024",
-    role: "FRONTEND LEAD",
-    desc: "Jonli darslar va AI-tekshiruvli testlar bilan ta'lim platformasi. Offline-first PWA arxitektura.",
-    long: "5 nafar frontend dasturchidan iborat jamoani boshqardim. WebRTC orqali 500+ talaba bir vaqtda jonli darsda qatnashadi. Zustand bilan bashoratli holat boshqaruvi, service-worker orqali darslar internetsiz ham davom etadi.",
-    stack: ["REACT", "ZUSTAND", "WEBRTC", "PWA", "SUPABASE"],
-    stat: { v: "120+", l: "VIDEO KURS" },
+    title: "RUST CLI TO'PLAMI",
+    year: "2026",
+    badge: "EKSPERIMENT",
+    desc: "Rust bilan birinchi jiddiy urinish: fayl tizimi va tizim ma'lumotlari bilan ishlovchi kichik CLI utilitylar to'plami.",
+    long: "Rust o'rganishning eng yaxshi yo'li — real narsa qurish. Fayl qidiruvchi, tizim monitori va log tahlilchisi yozdim. Borrow checker bilan bo'lgan har bir janjal menga yangi tushuncha berdi: ownership, Result bilan xato boshqaruvi va cargo ekotizimi. Bu hali boshlanishi.",
+    stack: ["RUST", "CARGO", "CLAP", "SERDE"],
+    stat: { v: "45%", l: "O'ZLASHTIRILDI" },
   },
   {
     num: "03",
-    title: "NON & NON",
-    year: "2023",
-    role: "SOLO DEVELOPER",
-    desc: "Hunarmand nonvoyxona uchun headless e-commerce — issiq non har kuni soat 06:00 da saytda.",
-    long: "Butun loyihani noldan deploygacha yakka o'zim qurdim. Shopify headless API, Next.js ISR va Framer Motion mikro-animatsiyalar. Natija: savdo 3 barobar o'sdi, sahifa yuklanishi 0.8 soniyaga tushdi. Lighthouse — 100/100/100/100.",
-    stack: ["NEXT.JS", "SHOPIFY", "TAILWIND", "FRAMER MOTION"],
-    stat: { v: "3X", l: "SAVDO O'SISHI" },
+    title: "ARYFMA TOOLS",
+    year: "2026",
+    badge: "ISH",
+    desc: "ARYFMA uchun ichki yordam vositasi: ticket kuzatuvi, qurilmalar ro'yxati va xodimlar uchun tez yechim bazasi.",
+    long: "Ishga kirganimda ticketlar daftar va og'zaki yuritilardi. O'zim uchun kichik boshlagan vosita asta-sekin butun jamoaning asbobiga aylandi: har bir murojaat qayd etiladi, qurilmalar bazada, takroriy muammolar uchun tayyor yechimlar bor. Natija — javob vaqti sezilarli qisqardi.",
+    stack: ["KOTLIN", "SQL", "REST API", "COROUTINES"],
+    stat: { v: "-40%", l: "JAVOB VAQTI" },
   },
   {
     num: "04",
-    title: "CHIRCHIQ PAY",
-    year: "2023",
-    role: "BACKEND",
-    desc: "Kichik biznes uchun to'lov terminallari boshqaruvi: real-time monitoring va antifraud tizimi.",
-    long: "Kuniga 200 000+ tranzaksiyani qayta ishlaydigan mikroservislar arxitekturasi. Kafka navbatlari, Redis kesh va Grafana dashbordlari. Eng katta faxr: 14 oy davomida 99.98% uptime — bitta jiddiy insidentsiz.",
-    stack: ["NODE.JS", "REDIS", "KAFKA", "DOCKER", "GRAFANA"],
-    stat: { v: "99.98%", l: "UPTIME" },
+    title: "KMP SINOV",
+    year: "2025",
+    badge: "EKSPERIMENT",
+    desc: "Kotlin Multiplatform sinovi: bitta kod bazasi — Android va Desktop. Mantiq umumiy, interfeys platformaga mos.",
+    long: "Kelajak shu yo'nalishda deb hisoblayman: biznes-mantiq bir joyda, UI esa har platformada o'ziga xos. Umumiy modulda tarmoq va saqlash qatlamini yozdim, Compose Multiplatform'da desktop versiyasini sinovdan o'tkazdim. Gradle konfiguratsiyasi — alohida sarguzasht bo'ldi.",
+    stack: ["KOTLIN", "KMP", "COMPOSE MULTIPLATFORM", "GRADLE"],
+    stat: { v: "2", l: "PLATFORMA" },
   },
 ];
 
@@ -81,6 +81,12 @@ function TiltRow({ children }: { children: ReactNode }) {
   );
 }
 
+const BADGE_STYLE: Record<Project["badge"], string> = {
+  SHAXSIY: "border-lime/40 text-lime",
+  EKSPERIMENT: "border-coral/50 text-coral",
+  ISH: "border-cream/30 text-cream/80",
+};
+
 export default function Projects() {
   const [sel, setSel] = useState<Project | null>(null);
 
@@ -96,9 +102,9 @@ export default function Projects() {
     <section id="projects" className="relative py-24 md:py-32 scroll-mt-20">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <div className="flex flex-wrap items-end justify-between gap-6 mb-14">
-          <SectionHead num="03" label="TANLANGAN ISHLAR" title="LOYIHALAR" />
-          <p className="font-term text-[11px] tracking-[0.25em] text-sage">
-            [ 2023 — 2025 ] &nbsp;<span className="text-coral">4 TA</span>
+          <SectionHead num="04" label="QURILAYOTGAN NARSALAR" title="LOYIHALAR & EKSPERIMENTLAR" />
+          <p className="font-term text-[11px] tracking-[0.25em] text-sage max-w-xs text-right hidden sm:block">
+            BUYURTMA EMAS — <span className="text-coral">O'Z G'OYALARIM.</span>
           </p>
         </div>
 
@@ -115,13 +121,14 @@ export default function Projects() {
                     {p.num}
                   </span>
                   <span className="block">
-                    <span className="flex flex-wrap items-baseline gap-x-5 gap-y-1">
-                      <span className="font-display font-bold text-2xl md:text-4xl text-cream group-hover:text-lime transition-colors duration-300">
+                    <span className="flex flex-wrap items-center gap-x-5 gap-y-2">
+                      <span className="font-display font-bold text-2xl md:text-3xl text-cream group-hover:text-lime transition-colors duration-300">
                         {p.title}
                       </span>
-                      <span className="font-term text-[10px] tracking-[0.25em] text-sage">
-                        {p.year} — {p.role}
+                      <span className={`font-term text-[9px] tracking-[0.25em] px-2 py-1 border ${BADGE_STYLE[p.badge]}`}>
+                        {p.badge}
                       </span>
+                      <span className="font-term text-[10px] tracking-[0.25em] text-sage">{p.year}</span>
                     </span>
                     <span className="block mt-3 text-cream/60 max-w-2xl leading-relaxed">{p.desc}</span>
                     <span className="mt-4 flex flex-wrap gap-2">
@@ -159,7 +166,7 @@ export default function Projects() {
             <div className="flex items-start justify-between gap-6">
               <div>
                 <p className="font-term text-[11px] tracking-[0.3em] text-coral mb-3">
-                  {sel.num} / {sel.year} — {sel.role}
+                  {sel.num} / {sel.year} — <span className={BADGE_STYLE[sel.badge].split(" ")[1]}>{sel.badge}</span>
                 </p>
                 <h3 className="font-display font-black text-3xl md:text-4xl text-cream">{sel.title}</h3>
               </div>
@@ -190,13 +197,13 @@ export default function Projects() {
               </div>
               <div className="flex gap-3">
                 <a
-                  href="https://github.com"
+                  href="https://www.linkedin.com/in/abrorraximbayev-909512387"
                   target="_blank"
                   rel="noreferrer"
                   data-hover
                   className="inline-flex items-center gap-2 bg-lime text-ink font-term text-xs px-5 py-3 hover:bg-coral hover:text-cream transition-colors duration-300"
                 >
-                  GITHUB <ArrowUpRight className="w-3.5 h-3.5" />
+                  LINKEDIN'DA SO'RANG <ArrowUpRight className="w-3.5 h-3.5" />
                 </a>
                 <button
                   onClick={() => setSel(null)}

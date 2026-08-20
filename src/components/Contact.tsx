@@ -1,219 +1,277 @@
-import { useState, type FormEvent } from "react";
-import { useReveal, useScramble } from "../hooks";
-import { ArrowUp, ArrowUpRight, Magnetic, Reveal } from "../ui";
+import { useState } from "react";
+import { useTashkentTime } from "../hooks";
+import { ArrowUpRight, Reveal, SectionHead } from "../ui";
 
-const SOCIALS = [
-  { n: "GITHUB", h: "@sardorcodes", url: "https://github.com" },
-  { n: "TELEGRAM", h: "@sardor_dev", url: "https://t.me" },
-  { n: "LINKEDIN", h: "/in/sardor-dev", url: "https://linkedin.com" },
-  { n: "INSTAGRAM", h: "@sardor.codes", url: "https://instagram.com" },
-];
+const EMAIL = "abrorraximbayev272@gmail.com";
+const LINKEDIN = "https://www.linkedin.com/in/abrorraximbayev-909512387";
+const LINKEDIN_SHORT = "/in/abrorraximbayev-909512387";
+
+type FormState = "idle" | "sending" | "done";
 
 export default function Contact() {
-  const { ref, inView } = useReveal<HTMLDivElement>(0.2);
-  const t1 = useScramble("LOYIHA BORMI?", inView, 30);
-  const t2 = useScramble("GAPLASHAMIZ.", inView, 30);
   const [copied, setCopied] = useState(false);
-  const [sent, setSent] = useState(false);
-  const [form, setForm] = useState({ name: "", email: "", msg: "" });
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [topic, setTopic] = useState("Hamkorlik");
+  const [msg, setMsg] = useState("");
+  const [errs, setErrs] = useState<{ name?: string; email?: string; msg?: string }>({});
+  const [state, setState] = useState<FormState>("idle");
+  const time = useTashkentTime();
 
   const copy = async () => {
     try {
-      await navigator.clipboard.writeText("salom@sardor.dev");
+      await navigator.clipboard.writeText(EMAIL);
     } catch {
-      /* eski brauzer — muhim emas */
+      /* qo'lda tanlash mumkin */
     }
     setCopied(true);
-    window.setTimeout(() => setCopied(false), 2200);
+    window.setTimeout(() => setCopied(false), 1800);
   };
 
-  const submit = (e: FormEvent) => {
+  const submit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSent(true);
+    const next: typeof errs = {};
+    if (name.trim().length < 2) next.name = "Ismingizni kiriting";
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) next.email = "Email noto'g'ri ko'rinadi";
+    if (msg.trim().length < 5) next.msg = "Xabar juda qisqa";
+    setErrs(next);
+    if (Object.keys(next).length > 0) return;
+
+    setState("sending");
+    const subject = encodeURIComponent(`Portfolio: ${topic} — ${name}`);
+    const body = encodeURIComponent(`Assalomu alaykum, Abror!\n\n${msg}\n\n—Ism: ${name}\n—Email: ${email}`);
+    window.setTimeout(() => {
+      window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
+      setState("done");
+    }, 900);
   };
+
+  const inputCls = (err?: string) =>
+    `w-full bg-ink border px-4 py-3.5 font-term text-sm text-cream outline-none transition-colors duration-300 placeholder:text-cream/30 ${
+      err ? "border-coral" : "border-cream/15 focus:border-lime"
+    }`;
 
   return (
-    <section id="contact" className="relative py-24 md:py-32 scroll-mt-20 overflow-hidden">
-      <div className="absolute top-0 right-0 w-[36rem] h-[36rem] rounded-full bg-lime/[0.04] blur-3xl pointer-events-none" />
-      <div ref={ref} className="mx-auto max-w-7xl px-5 md:px-8">
-        <div className="grid lg:grid-cols-2 gap-14 lg:gap-20">
+    <section id="contact" className="relative py-24 md:py-32 scroll-mt-20">
+      <div className="mx-auto max-w-7xl px-5 md:px-8">
+        <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-start">
           <div>
-            <p className="font-term text-[11px] md:text-xs tracking-[0.35em] text-coral mb-4">
-              <span className="text-sage">05</span> // ALOQA
-            </p>
-            <h2 className="font-display font-black leading-[1.05] text-4xl sm:text-5xl lg:text-6xl text-cream">
-              {t1}
-              <span className="block text-outline mt-2">{t2}</span>
-            </h2>
-            <p className="mt-7 text-cream/65 leading-relaxed max-w-md text-lg">
-              G'oya, taklif yoki shunchaki "salom" — hammasiga ochiqman. Odatda{" "}
-              <span className="text-lime">24 soat ichida</span> javob beraman.
-            </p>
+            <SectionHead num="06" label="KANALLAR" title="GAPLASHAMIZMI?" />
+            <Reveal delay={140}>
+              <p className="mt-7 text-cream/70 leading-relaxed max-w-lg">
+                Ochig'ini aytaman: <span className="text-coral font-semibold">freelans buyurtma qabul qilmayman</span>{" "}
+                — o'z kompaniyamda mahsulot qurish bilan bandman. Lekin{" "}
+                <span className="text-lime font-semibold">hamkorlik, g'oya almashish</span> va Kotlin/Rust
+                haqida suhbat uchun eshik doim ochiq.
+              </p>
+            </Reveal>
 
-            <div className="mt-10 border-t border-cream/10">
-              <div className="flex items-center justify-between gap-4 border-b border-cream/10 py-5">
-                <div>
-                  <p className="font-term text-[10px] tracking-[0.3em] text-sage">EMAIL</p>
-                  <a href="mailto:salom@sardor.dev" data-hover className="font-display font-bold text-lg md:text-xl text-cream hover:text-lime transition-colors">
-                    salom@sardor.dev
-                  </a>
-                </div>
-                <button
-                  onClick={copy}
-                  data-hover
-                  className={`shrink-0 font-term text-[11px] tracking-[0.15em] px-4 py-2.5 border transition-all duration-300 ${
-                    copied
-                      ? "border-lime bg-lime text-ink"
-                      : "border-cream/20 text-cream/70 hover:border-lime hover:text-lime"
-                  }`}
-                >
-                  {copied ? "NUSXALANDI ✓" : "NUSXALASH"}
-                </button>
-              </div>
-
-              {SOCIALS.map((s, i) => (
-                <Reveal key={s.n} delay={i * 70}>
-                  <a
-                    href={s.url}
-                    target="_blank"
-                    rel="noreferrer"
+            <div className="mt-10 space-y-4">
+              <Reveal delay={200}>
+                <div className="group border border-cream/10 bg-ink2/50 px-6 py-5 flex flex-wrap items-center justify-between gap-4 hover:border-lime/50 transition-colors duration-300" data-hover>
+                  <div className="min-w-0">
+                    <p className="font-term text-[9px] tracking-[0.3em] text-sage">EMAIL</p>
+                    <a href={`mailto:${EMAIL}`} className="font-term text-sm md:text-base text-cream group-hover:text-lime transition-colors break-all">
+                      {EMAIL}
+                    </a>
+                  </div>
+                  <button
+                    onClick={copy}
                     data-hover
-                    className="group flex items-center justify-between gap-4 border-b border-cream/10 py-4 hover:bg-cream/[0.03] hover:pl-3 transition-all duration-300"
+                    className={`font-term text-[10px] tracking-[0.2em] px-4 py-2.5 border transition-all duration-300 ${
+                      copied
+                        ? "border-lime bg-lime text-ink"
+                        : "border-cream/20 text-cream/70 hover:border-lime hover:text-lime"
+                    }`}
                   >
-                    <span className="font-display font-bold text-sm md:text-base text-cream/85 group-hover:text-coral transition-colors">
-                      {s.n}
-                    </span>
-                    <span className="font-term text-[11px] text-sage">{s.h}</span>
-                    <ArrowUpRight className="w-4 h-4 text-sage group-hover:text-lime group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300" />
-                  </a>
-                </Reveal>
-              ))}
+                    {copied ? "NUSXALANDI ✓" : "NUSXALASH"}
+                  </button>
+                </div>
+              </Reveal>
+
+              <Reveal delay={280}>
+                <a
+                  href={LINKEDIN}
+                  target="_blank"
+                  rel="noreferrer"
+                  data-hover
+                  className="group border border-cream/10 bg-ink2/50 px-6 py-5 flex items-center justify-between gap-4 hover:border-lime/50 transition-colors duration-300"
+                >
+                  <div className="min-w-0">
+                    <p className="font-term text-[9px] tracking-[0.3em] text-sage">LINKEDIN</p>
+                    <p className="font-term text-sm md:text-base text-cream group-hover:text-lime transition-colors truncate">
+                      {LINKEDIN_SHORT}
+                    </p>
+                  </div>
+                  <ArrowUpRight className="w-5 h-5 text-cream/50 group-hover:text-lime group-hover:rotate-45 transition-all duration-300 shrink-0" />
+                </a>
+              </Reveal>
+
+              <Reveal delay={360}>
+                <div className="group border border-cream/10 bg-ink2/50 px-6 py-5 flex items-center justify-between gap-4 hover:border-lime/50 transition-colors duration-300" data-hover>
+                  <div>
+                    <p className="font-term text-[9px] tracking-[0.3em] text-sage">LOKATSIYA</p>
+                    <p className="font-term text-sm md:text-base text-cream">
+                      Xazorasp, Xorazm <span className="text-sage">→</span> ish: Urgench
+                    </p>
+                  </div>
+                  <span className="font-term text-[10px] text-sage tracking-[0.2em] tabular-nums shrink-0">TAS {time}</span>
+                </div>
+              </Reveal>
             </div>
 
-            <p className="mt-8 font-term text-[10px] tracking-[0.25em] text-sage flex items-center gap-3">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-lime opacity-60" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-lime" />
-              </span>
-              HOZIR YANGI LOYIHALAR QABUL QILINMOQDA
-            </p>
+            <Reveal delay={420}>
+              <p className="mt-8 font-term text-[11px] text-sage leading-relaxed border-l-2 border-coral pl-4">
+                Javob odatda <span className="text-cream">24 soat ichida</span> — darslar va ish orasida.
+                Kotlin yoki Rust haqida bo'lsa, <span className="text-lime">tezroq ham</span>.
+              </p>
+            </Reveal>
           </div>
 
           {/* forma */}
-          <Reveal delay={150}>
-            <div className="border border-cream/15 bg-ink2/60 p-7 md:p-10 relative">
-              <div className="absolute -top-3 left-6 bg-ink px-3 font-term text-[10px] tracking-[0.3em] text-coral">
-                TEZ XABAR
-              </div>
+          <Reveal delay={200}>
+            <div className="border border-cream/15 bg-ink2/60 p-7 md:p-9 relative overflow-hidden">
+              <div className="absolute top-0 inset-x-0 h-[3px] bg-gradient-to-r from-lime via-cream/40 to-coral" />
+              <p className="font-term text-[11px] tracking-[0.35em] text-coral mb-7">// XABAR QOLDIRING</p>
 
-              {sent ? (
-                <div className="py-16 text-center">
-                  <svg viewBox="0 0 52 52" className="w-16 h-16 mx-auto" fill="none">
-                    <circle cx="26" cy="26" r="24" stroke="var(--color-lime)" strokeWidth="2" opacity="0.4" />
-                    <path
-                      d="M15 27l8 8 15-17"
-                      stroke="var(--color-lime)"
-                      strokeWidth="3"
-                      strokeLinecap="square"
-                      className="draw-check"
-                    />
+              {state === "done" ? (
+                <div className="py-14 text-center">
+                  <svg viewBox="0 0 48 48" className="w-16 h-16 mx-auto" fill="none" stroke="#c6f24e" strokeWidth="3">
+                    <circle cx="24" cy="24" r="21" stroke="#c6f24e33" />
+                    <path d="M14 25l7 7 13-14" className="draw-check" strokeLinecap="square" />
                   </svg>
-                  <p className="mt-6 font-display font-bold text-2xl text-cream">XABARINGIZ UCHDI!</p>
-                  <p className="mt-3 font-term text-xs text-sage tracking-[0.15em]">
-                    {form.name.toUpperCase() ? `${form.name.toUpperCase()}, ` : ""}24 SOAT ICHIDA JAVOB BERAMAN.
+                  <p className="font-display font-bold text-2xl text-cream mt-6">XABAR TAYYOR!</p>
+                  <p className="font-term text-xs text-sage mt-3 leading-relaxed max-w-xs mx-auto">
+                    Pochta ilovasi ochilgan bo'lishi kerak. Ochilmagan bo'lsa, yuqoridagi emailni nusxalang.
                   </p>
                   <button
                     onClick={() => {
-                      setSent(false);
-                      setForm({ name: "", email: "", msg: "" });
+                      setState("idle");
+                      setName("");
+                      setEmail("");
+                      setMsg("");
                     }}
                     data-hover
-                    className="mt-8 font-term text-[11px] tracking-[0.2em] text-coral hover:text-lime transition-colors"
+                    className="mt-7 font-term text-[11px] tracking-[0.2em] px-5 py-3 border border-cream/20 text-cream/70 hover:border-lime hover:text-lime transition-colors duration-300"
                   >
-                    ← YANA YOZISH
+                    YANA YUBORISH
                   </button>
                 </div>
               ) : (
-                <form onSubmit={submit} className="space-y-6">
-                  {(
-                    [
-                      { k: "name", l: "ISMINGIZ", ph: "Aziz Azizov", type: "text" },
-                      { k: "email", l: "EMAIL", ph: "aziz@misol.uz", type: "email" },
-                    ] as const
-                  ).map((f) => (
-                    <div key={f.k}>
-                      <label className="block font-term text-[10px] tracking-[0.3em] text-sage mb-2" htmlFor={f.k}>
-                        {f.l} <span className="text-coral">*</span>
-                      </label>
-                      <input
-                        id={f.k}
-                        type={f.type}
-                        required
-                        value={form[f.k]}
-                        onChange={(e) => setForm({ ...form, [f.k]: e.target.value })}
-                        placeholder={f.ph}
-                        className="w-full bg-transparent border-b border-cream/20 focus:border-lime outline-none py-3 text-cream placeholder:text-cream/25 transition-colors duration-300 font-medium"
-                      />
+                <form onSubmit={submit} className="space-y-5" noValidate>
+                  <div className="grid sm:grid-cols-2 gap-5">
+                    <div>
+                      <label className="font-term text-[10px] tracking-[0.25em] text-sage block mb-2" htmlFor="f-name">ISM</label>
+                      <input id="f-name" data-hover value={name} onChange={(e) => setName(e.target.value)} placeholder="Ismingiz" className={inputCls(errs.name)} />
+                      {errs.name && <p className="font-term text-[10px] text-coral mt-1.5">{errs.name}</p>}
                     </div>
-                  ))}
-                  <div>
-                    <label className="block font-term text-[10px] tracking-[0.3em] text-sage mb-2" htmlFor="msg">
-                      XABAR <span className="text-coral">*</span>
-                    </label>
-                    <textarea
-                      id="msg"
-                      required
-                      rows={4}
-                      value={form.msg}
-                      onChange={(e) => setForm({ ...form, msg: e.target.value })}
-                      placeholder="Loyihangiz haqida qisqacha..."
-                      className="w-full bg-transparent border-b border-cream/20 focus:border-lime outline-none py-3 text-cream placeholder:text-cream/25 transition-colors duration-300 resize-none font-medium"
-                    />
+                    <div>
+                      <label className="font-term text-[10px] tracking-[0.25em] text-sage block mb-2" htmlFor="f-email">EMAIL</label>
+                      <input id="f-email" data-hover type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="siz@pochta.uz" className={inputCls(errs.email)} />
+                      {errs.email && <p className="font-term text-[10px] text-coral mt-1.5">{errs.email}</p>}
+                    </div>
                   </div>
-                  <Magnetic>
-                    <button
-                      type="submit"
-                      data-hover
-                      className="group w-full inline-flex items-center justify-center gap-3 bg-lime text-ink font-display font-bold text-sm px-7 py-4 hover:bg-coral hover:text-cream transition-colors duration-300"
-                    >
-                      YUBORISH
-                      <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
-                    </button>
-                  </Magnetic>
+                  <div>
+                    <label className="font-term text-[10px] tracking-[0.25em] text-sage block mb-2" htmlFor="f-topic">MAVZU</label>
+                    <select id="f-topic" data-hover value={topic} onChange={(e) => setTopic(e.target.value)} className={`${inputCls()} appearance-none`}>
+                      {["Hamkorlik", "Kotlin / Android suhbati", "Rust haqida", "G'oya almashish", "Boshqa"].map((t) => (
+                        <option key={t} value={t} className="bg-ink text-cream">{t}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <div>
+                    <label className="font-term text-[10px] tracking-[0.25em] text-sage block mb-2" htmlFor="f-msg">XABAR</label>
+                    <textarea id="f-msg" data-hover value={msg} onChange={(e) => setMsg(e.target.value)} rows={5} placeholder="Qisqa va lo'nda yozing..." className={`${inputCls(errs.msg)} resize-none`} />
+                    {errs.msg && <p className="font-term text-[10px] text-coral mt-1.5">{errs.msg}</p>}
+                  </div>
+                  <button
+                    type="submit"
+                    disabled={state === "sending"}
+                    data-hover
+                    className="w-full group bg-lime text-ink font-display font-bold text-sm py-4 hover:bg-coral hover:text-cream transition-colors duration-300 disabled:opacity-60 flex items-center justify-center gap-3"
+                  >
+                    {state === "sending" ? (
+                      <>
+                        <span className="w-4 h-4 border-2 border-ink/40 border-t-ink rounded-full animate-spin" />
+                        YUBORILMOQDA...
+                      </>
+                    ) : (
+                      <>
+                        POCHTAGA YUBORISH
+                        <ArrowUpRight className="w-4 h-4 group-hover:rotate-45 transition-transform duration-300" />
+                      </>
+                    )}
+                  </button>
                 </form>
               )}
             </div>
           </Reveal>
         </div>
       </div>
-    </section>
-  );
-}
 
-export function Footer() {
-  return (
-    <footer className="relative z-10 border-t border-cream/10 py-8">
-      <div className="mx-auto max-w-7xl px-5 md:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
-        <p className="font-term text-[10px] md:text-[11px] text-sage tracking-[0.2em]">
-          © 2025 SARDOR KARIMOV — TOSHKENT
-        </p>
-        <p className="font-term text-[10px] md:text-[11px] text-cream/35 tracking-[0.2em] text-center">
-          SYURPRIZ: <span className="text-coral">↑ ↑ ↓ ↓ ← → ← → B A</span>
-        </p>
-        <div className="flex items-center gap-6">
-          <p className="font-term text-[10px] md:text-[11px] text-sage tracking-[0.2em] hidden sm:block">
-            0 TAYYOR SHABLON — 100% QO'LDA
-          </p>
-          <a
-            href="#top"
-            data-hover
-            aria-label="Yuqoriga"
-            className="w-9 h-9 border border-cream/20 flex items-center justify-center text-cream/70 hover:border-lime hover:text-lime hover:-translate-y-1 transition-all duration-300"
-          >
-            <ArrowUp className="w-4 h-4" />
-          </a>
+      {/* footer */}
+      <footer className="mt-24 border-t border-cream/10">
+        <div className="mx-auto max-w-7xl px-5 md:px-8 py-12 grid md:grid-cols-3 gap-10">
+          <div>
+            <p className="font-display font-black text-2xl text-cream">
+              ABROR<span className="text-lime">.OS</span>
+            </p>
+            <p className="font-term text-[11px] text-sage mt-3 leading-relaxed max-w-xs">
+              Kotlin, Rust va kofe ustida qurilgan shaxsiy sayt. Barcha kod — qo'lda, g'urur bilan.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 gap-6">
+            <div className="space-y-2.5">
+              <p className="font-term text-[10px] tracking-[0.3em] text-sage mb-3">SAHIFALAR</p>
+              {[
+                ["#about", "Haqimda"],
+                ["#experience", "Tajriba"],
+                ["#skills", "Ko'nikmalar"],
+              ].map(([h, l]) => (
+                <a key={h} href={h} data-hover className="block font-term text-xs text-cream/60 hover:text-lime transition-colors">
+                  {l}
+                </a>
+              ))}
+            </div>
+            <div className="space-y-2.5">
+              <p className="font-term text-[10px] tracking-[0.3em] text-sage mb-3">KANALLAR</p>
+              {[
+                ["#projects", "Loyihalar"],
+                ["#terminal", "Terminal"],
+                [LINKEDIN, "LinkedIn"],
+              ].map(([h, l]) => (
+                <a
+                  key={l}
+                  href={h}
+                  target={h.startsWith("http") ? "_blank" : undefined}
+                  rel={h.startsWith("http") ? "noreferrer" : undefined}
+                  data-hover
+                  className="block font-term text-xs text-cream/60 hover:text-lime transition-colors"
+                >
+                  {l}
+                </a>
+              ))}
+            </div>
+          </div>
+          <div className="md:text-right">
+            <p className="font-term text-[11px] text-sage tabular-nums">TOSHKENT — {time}</p>
+            <p className="font-term text-[11px] text-sage mt-2">v2.5 — xorazm build</p>
+            <p className="font-term text-[10px] text-cream/35 mt-4 hidden md:block">
+              sir: ↑ ↑ ↓ ↓ ← → ← → B A
+            </p>
+          </div>
         </div>
-      </div>
-    </footer>
+        <div className="border-t border-cream/10">
+          <div className="mx-auto max-w-7xl px-5 md:px-8 py-5 flex flex-wrap items-center justify-between gap-3">
+            <p className="font-term text-[10px] tracking-[0.2em] text-cream/40">
+              © 2026 ABROR RAXIMBAYEV — XOZORASP → URGENCH
+            </p>
+            <p className="font-term text-[10px] tracking-[0.2em] text-cream/40">
+              KOFE VA <span className="text-lime">KOTLIN</span> BILAN QURILDI
+            </p>
+          </div>
+        </div>
+      </footer>
+    </section>
   );
 }

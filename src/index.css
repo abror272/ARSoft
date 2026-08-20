@@ -237,3 +237,33 @@ body {
   stroke-dashoffset: 60;
   animation: drawcheck 0.6s 0.15s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
+
+/* Rust — o'rganilmoqda: yuguruvchi chiziqli bar */
+@keyframes stripes {
+  to { background-position: 24px 0; }
+}
+.bar-stripes {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(237, 232, 220, 0.35) 0 6px,
+    transparent 6px 12px
+  );
+  background-size: 24px 24px;
+  animation: stripes 0.7s linear infinite;
+}
+
+@keyframes bounce-down {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+.bounce-slow {
+  animation: bounce-down 1.8s ease-in-out infinite;
+}
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-10px) rotate(1deg); }
+}
+.floaty {
+  animation: floaty 6s ease-in-out infinite;
+}

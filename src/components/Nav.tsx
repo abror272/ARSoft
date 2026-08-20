@@ -3,6 +3,7 @@ import { useTashkentTime } from "../hooks";
 
 const LINKS = [
   { href: "#about", label: "HAQIMDA" },
+  { href: "#experience", label: "TAJRIBA" },
   { href: "#skills", label: "KO'NIKMALAR" },
   { href: "#projects", label: "LOYIHALAR" },
   { href: "#terminal", label: "TERMINAL" },
@@ -44,14 +45,14 @@ export default function Nav() {
         <nav className="mx-auto max-w-7xl px-5 md:px-8 h-16 flex items-center justify-between">
           <a href="#top" data-hover className="flex items-center gap-2 group">
             <span className="font-display font-bold text-lg text-lime border border-lime/60 px-2 py-0.5 group-hover:bg-lime group-hover:text-ink transition-colors duration-300">
-              S<span className="caret">_</span>
+              AR<span className="caret">_</span>
             </span>
             <span className="font-term text-[10px] text-sage hidden sm:block tracking-[0.25em]">
-              v2.4.1
+              v2.5
             </span>
           </a>
 
-          <div className="hidden md:flex items-center gap-6 lg:gap-7">
+          <div className="hidden lg:flex items-center gap-6 xl:gap-7">
             {LINKS.map((l, i) => (
               <a
                 key={l.href}
@@ -73,7 +74,7 @@ export default function Nav() {
             onClick={() => setOpen(!open)}
             data-hover
             aria-label="Menyu"
-            className="md:hidden flex flex-col gap-1.5 p-2"
+            className="lg:hidden flex flex-col gap-1.5 p-2"
           >
             <span className={`block h-0.5 w-6 bg-lime transition-transform duration-300 ${open ? "translate-y-2 rotate-45" : ""}`} />
             <span className={`block h-0.5 w-6 bg-cream transition-opacity duration-300 ${open ? "opacity-0" : ""}`} />
@@ -84,7 +85,7 @@ export default function Nav() {
 
       {/* mobil menyu */}
       <div
-        className={`fixed inset-0 z-[65] md:hidden bg-ink/95 backdrop-blur-lg transition-all duration-500 ${
+        className={`fixed inset-0 z-[65] lg:hidden bg-ink/95 backdrop-blur-lg transition-all duration-500 ${
           open ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       >
@@ -94,7 +95,7 @@ export default function Nav() {
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className={`font-display text-3xl font-bold text-cream hover:text-lime transition-all duration-500 py-4 border-b border-cream/10 flex items-baseline gap-4 ${
+              className={`font-display text-2xl sm:text-3xl font-bold text-cream hover:text-lime transition-all duration-500 py-4 border-b border-cream/10 flex items-baseline gap-4 ${
                 open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
               style={{ transitionDelay: open ? `${120 + i * 60}ms` : "0ms" }}

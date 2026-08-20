@@ -25,7 +25,7 @@ function beep() {
   }
 }
 
-const HINTS = ["help", "skills", "kofe", "cat sir.txt", "hack", "matrix", "party"];
+const HINTS = ["help", "company", "skills", "kofe", "cat sir.txt", "hack", "matrix", "party"];
 
 export default function Terminal({
   onHack,
@@ -37,7 +37,7 @@ export default function Terminal({
   onParty: () => void;
 }) {
   const [lines, setLines] = useState<Line[]>([
-    { t: "sys", text: "SARDOR.OS terminal v2.4 — tayyor." },
+    { t: "sys", text: "ABROR.OS terminal v2.5 — xorazm build." },
     { t: "sys", text: "'help' deb yozing va Enter bosing." },
   ]);
   const [input, setInput] = useState("");
@@ -64,9 +64,11 @@ export default function Terminal({
       case "help":
         push(
           "MAVCUD BUYRUQLAR:",
-          "  about        kim men?",
+          "  about        kim u?",
+          "  company      kompaniya haqida (muhim!)",
           "  skills       ko'nikmalar darajasi",
-          "  projects     tanlangan loyihalar",
+          "  experience   ish tajribasi",
+          "  education    ta'lim",
           "  contact      aloqa kanallari",
           "  whoami       siz kimsiz?",
           "  date         Toshkent vaqti",
@@ -82,39 +84,47 @@ export default function Terminal({
         break;
       case "about":
         push(
-          "Sardor Karimov — Full-Stack Developer, Toshkent.",
-          "5+ yil tajriba. Kod — ona tilim, kofe — yoqilg'im."
+          "Abror Raximbayev — Kotlin dasturchisi, Xorazm.",
+          "UrDU talabasi (Software Engineering). Rust o'rganyapti.",
+          "ARYFMA'da IT mutaxassis. Oldin BR Tech'da 1 yil staj."
+        );
+        break;
+      case "company":
+        push(
+          "O'z kompaniyam bor — buyurtma qabul qilmayman.",
+          "Butun energiya: o'z mahsulotimni qurish.",
+          "Hamkorlik va g'oyalar uchun LinkedIn ochiq."
         );
         break;
       case "skills":
         push(
-          "REACT       [##########] 95%",
-          "TYPESCRIPT  [#########-] 90%",
-          "TAILWIND    [#########-] 94%",
-          "NODE.JS     [########--] 88%",
-          "SQL         [########--] 85%",
-          "PYTHON      [########--] 82%"
+          "KOTLIN      [#########-] 92%",
+          "ANDROID     [########--] 88%",
+          "COMPOSE     [########--] 85%",
+          "GIT/LINUX   [########--] 88%",
+          "JAVA        [#######---] 76%",
+          "RUST        [####------] 45% (o'rganilmoqda...)"
         );
         break;
-      case "projects":
+      case "experience":
         push(
-          "01 SAMO TRAVEL  — sayohat platformasi (40K+ user)",
-          "02 BILIM EDU    — online ta'lim (120+ kurs)",
-          "03 NON & NON    — headless e-commerce (3x savdo)",
-          "04 CHIRCHIQ PAY — fintech (99.98% uptime)",
-          "",
-          "Batafsil: sahifaning LOYIHALAR bo'limida."
+          "ARYFMA   — IT yordam mutaxassisi (2026.06 — hozir)",
+          "BR TECH  — Stajyor (2025.06 — 2026.06, 1 yil 1 oy)",
+          "O'z kompaniya — Asoschi (davom etmoqda)"
         );
+        break;
+      case "education":
+        push("Urganch davlat universiteti — Software Engineering (2025 — hozir)");
         break;
       case "contact":
         push(
-          "EMAIL    salom@sardor.dev",
-          "TELEGRAM @sardor_dev",
-          "GITHUB   github.com/sardorcodes"
+          "EMAIL    abrorraximbayev272@gmail.com",
+          "LINKEDIN linkedin.com/in/abrorraximbayev-909512387",
+          "MANZIL   Xazorasp, Xorazm viloyati"
         );
         break;
       case "whoami":
-        push("mehmon@portfolio — potensial hamkor :)");
+        push("mehmon@portfolio — potensial do'st yoki hamkor :)");
         break;
       case "date": {
         const s = new Intl.DateTimeFormat("en-GB", {
@@ -126,11 +136,11 @@ export default function Terminal({
         break;
       }
       case "ls":
-        push("about.md   skills.json   projects/   contact.txt   sir.txt");
+        push("about.md  company.txt  skills.json  experience/  ta'lim.txt  sir.txt");
         break;
       case "cat":
         if (args[0] === "sir.txt") {
-          push('"Bu saytga kirganlar jinni bo\'lishadi — bu reja edi."');
+          push('"Buyurtma bermang — o\'z kompaniyam bor. Do\'stlashing — gap boshqa."');
         } else {
           push(`cat: ${args[0] ?? ""}: bunday fayl topilmadi`);
         }
@@ -144,7 +154,7 @@ export default function Terminal({
           "    |      |]",
           "    \\      /",
           "     `----'",
-          "ESPRESSO TAYYOR. Davom etamiz!"
+          "ESPRESSO TAYYOR. Endi Rust davom etamiz!"
         );
         break;
       case "echo":
@@ -163,10 +173,10 @@ export default function Terminal({
         push("> RANGLI REJIM ALMASHTIRILDI.");
         break;
       case "sudo":
-        push("Ruxsat berilmadi: siz hali Sardor emassiz.");
+        push("Ruxsat berilmadi: siz hali Abror emassiz.");
         break;
       case "uname":
-        push("SARDOR.OS 2.4.1 portfolio-kernel x86_64 GNU/Linux");
+        push("ABROR.OS 2.5.0 xorazm-kernel aarch64 GNU/Linux");
         break;
       case "clear":
         setLines([]);
@@ -211,7 +221,7 @@ export default function Terminal({
     <section id="terminal" className="relative py-24 md:py-32 scroll-mt-20 bg-ink2/40 border-y border-cream/5">
       <div className="mx-auto max-w-5xl px-5 md:px-8">
         <div className="flex flex-wrap items-end justify-between gap-6 mb-12">
-          <SectionHead num="04" label="SINOV MAYDONI" title="HAQIQIY TERMINAL" />
+          <SectionHead num="05" label="SINOV MAYDONI" title="HAQIQIY TERMINAL" />
           <p className="font-term text-[11px] tracking-[0.25em] text-sage max-w-xs text-right hidden sm:block">
             BU RASM EMAS — BU ISHLAYDI.
             <br />
@@ -231,7 +241,7 @@ export default function Terminal({
                 <span className="w-3 h-3 rounded-full bg-cream/25" />
                 <span className="w-3 h-3 rounded-full bg-lime" />
               </div>
-              <p className="font-term text-[11px] text-sage tracking-[0.2em]">sardor@dev: ~/portfolio</p>
+              <p className="font-term text-[11px] text-sage tracking-[0.2em] hidden sm:block">abror@xorazm: ~/portfolio</p>
               <p className="font-term text-[10px] text-lime tracking-[0.2em] flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-lime animate-pulse" />
                 ONLINE
@@ -250,12 +260,12 @@ export default function Terminal({
                         : "text-lime/90 whitespace-pre-wrap"
                   }
                 >
-                  {l.t === "in" && <span className="text-coral">sardor@dev:~$ </span>}
+                  {l.t === "in" && <span className="text-coral">abror@xorazm:~$ </span>}
                   {l.text}
                 </p>
               ))}
               <div className="flex items-center gap-2">
-                <span className="text-coral shrink-0">sardor@dev:~$</span>
+                <span className="text-coral shrink-0">abror@xorazm:~$</span>
                 <input
                   ref={inputRef}
                   value={input}

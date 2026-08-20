@@ -15,7 +15,7 @@ export function MatrixRain() {
     const step = 18;
     const cols = Math.floor(w / step);
     const drops = Array.from({ length: cols }, () => Math.random() * -40);
-    const chars = "アカサタナハマヤラワ01<>/*+-=SARDORDEV";
+    const chars = "アカサタナハマヤラワ01<>/*+-=ABRORDEV";
 
     const id = window.setInterval(() => {
       ctx.fillStyle = "rgba(11,18,16,0.16)";

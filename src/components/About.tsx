@@ -7,16 +7,16 @@ const FACTS = [
   { k: "ASOSIY TIL", v: "Kotlin" },
   { k: "YANGI YO'NALISH", v: "Rust" },
   { k: "TA'LIM", v: "UrDU · Software Engineering" },
-  { k: "HOZIRGI ISH", v: "ARYFMA · IT mutaxassis" },
-  { k: "TAJRIBA", v: "BR Tech · 1 yil staj" },
-  { k: "BUYURTMA", v: "YO'Q — o'z kompaniya" },
+  { k: "HOZIRGI ISH", v: "ARYFMA · Texnik yordam mutaxassisi" },
+  { k: "OLDINGI TAJRIBA", v: "BR Tech · 1 yil staj" },
+  { k: "BUYURTMA", v: "YO'Q — o'z kompaniyam bor" },
 ];
 
 const NOW = [
-  { dot: "bg-lime", text: "Rust: ownership va borrowing bilan kurash" },
-  { dot: "bg-coral", text: "Kompaniyam uchun mahsulot — faol ishlab chiqish" },
-  { dot: "bg-cream/60", text: "Kotlin: Compose Multiplatform sinovlari" },
-  { dot: "bg-sage", text: "UrDU: 2-kurs, dasturiy muhandislik darslari" },
+  { dot: "bg-lime", text: "Rust: ownership va borrowing'ni o'zlashtiryapman" },
+  { dot: "bg-coral", text: "Kompaniyam mahsuloti — faol ishlab chiqish jarayonida" },
+  { dot: "bg-cream/60", text: "Kotlin: Compose Multiplatform'ni sinab ko'ryapman" },
+  { dot: "bg-sage", text: "UrDU: dasturiy muhandislik, 2025-yildan talabaman" },
 ];
 
 export default function About() {
@@ -55,26 +55,29 @@ export default function About() {
             <Reveal delay={120}>
               <p className="mt-7 text-cream/75 leading-relaxed text-base md:text-lg">
                 Men <span className="text-cream font-semibold">Abror Raximbayev</span> — Xorazmning
-                Xazorasp tumanidan chiqqan, hozirda Urgenchda yashab ishlaydigan{" "}
-                <span className="text-lime font-semibold">Kotlin dasturchisi</span>man. Urganch davlat
-                universitetida Software Engineering yo'nalishida o'qiyman. Kod yozish men uchun shunchaki
-                kasb emas — tizim qurish, muammoni topish va uni chiroyli yechish usuli.
+                Xazorasp tumanidanman, hozirda Urgenchda yashayman va ishlayman. Asosiy tilim —{" "}
+                <span className="text-lime font-semibold">Kotlin</span>, Android ilovalari sohasida
+                rivojlanyapman. Urganch davlat universitetida Software Engineering yo'nalishida o'qiyman.
+                Men uchun kod yozish shunchaki ish emas — muammoni topib, uni chiroyli yechish usuli.
               </p>
             </Reveal>
             <Reveal delay={200}>
               <p className="mt-5 text-cream/75 leading-relaxed text-base md:text-lg">
-                Karyeramni <span className="text-cream font-semibold">BR Tech</span>'da stajyor bo'lib
-                boshladim: bir yil davomida real jamoada ishlashni, muddat va sifat balansini o'rgandim.
-                Hozir <span className="text-cream font-semibold">ARYFMA</span>'da IT yordam mutaxassisi
-                bo'lib ishlayman — ichki tizimlar, texnik yordam va infratuzilma hammasi qo'limdan o'tadi.
+                Mehnat faoliyatimni <span className="text-cream font-semibold">BR Tech</span> kompaniyasida
+                stajyor bo'lib boshlaganman — bir yil davomida haqiqiy jamoada ishlashni, muddatga
+                ulgurishni va sifatni tushirmaslikni o'rgandim. Hozir{" "}
+                <span className="text-cream font-semibold">ARYFMA</span>'da texnik yordam mutaxassisi
+                bo'lib ishlayman: ichki tizimlar, xodimlarga ko'mak va umuman infratuzilma — barchasi
+                menga ishonib topshirilgan.
               </p>
             </Reveal>
             <Reveal delay={280}>
               <p className="mt-5 text-cream/75 leading-relaxed text-base md:text-lg">
-                Muhim prinsipim: <span className="text-coral font-semibold">buyurtma olmayman</span>. O'z
-                kompaniyam bor va butun energiyamni o'z mahsulotimni qurishga qarataman. Parallel ravishda{" "}
-                <span className="text-coral font-semibold">Rust</span> tilini o'rganyapman — xotira
-                xavfsizligi va unumdorlik mening keyingi katta qadamim.
+                Eng muhimi shu: <span className="text-coral font-semibold">buyurtma olmayman</span>. O'z
+                kompaniyam bor va butun vaqtim bilan energiyamni o'z mahsulotimni yaratishga sarflayman.
+                Shu bilan birga <span className="text-coral font-semibold">Rust</span> tilini
+                o'rganyapman — xotira xavfsizligi va yuqori unumdorlik menga juda yoqadi, bu mening
+                keyingi katta qadamim.
               </p>
             </Reveal>
 
@@ -104,7 +107,7 @@ export default function About() {
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-lime opacity-60" />
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-lime" />
                   </span>
-                  HOZIR NIMA QILYAPMAN
+                  HOZIR NIMA BILAN BANDMAN
                 </p>
                 <ul className="space-y-3">
                   {NOW.map((n) => (

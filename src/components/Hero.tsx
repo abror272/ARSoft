@@ -5,7 +5,7 @@ import { ArrowDown, ArrowUpRight, Magnetic } from "../ui";
 const WORDS = [
   "KOTLIN DASTURCHISI",
   "ANDROID ISHQIBOZI",
-  "RUST O'RGANUVCHI",
+  "RUST O'RGANYAPMAN",
   "KOMPANIYA ASOSCHISI",
 ];
 
@@ -51,7 +51,7 @@ export default function Hero() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-lime opacity-60" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-lime" />
               </span>
-              O'Z MAHSULOTIMNI QURYAPMAN
+              O'Z MAHSULOTIMNI YARATYAPMAN
             </span>
             <span className="text-sage hidden sm:block">XOZORASP → URGENCH, UZ</span>
             <span className="text-cream/50 tabular-nums">{time}</span>
@@ -75,10 +75,11 @@ export default function Hero() {
           </p>
 
           <p style={{ transitionDelay: "350ms" }} className={`mt-6 max-w-xl text-cream/70 text-base md:text-lg leading-relaxed ${el}`}>
-            Kotlin — asosiy qurolim, <span className="text-coral font-semibold">Rust</span> — yangi
-            sarguzashtim. UrDU'da Software Engineering o'qiyman, kunlik hayotda esa IT jangchisiman.{" "}
-            <span className="text-lime font-semibold">Buyurtma olmayman</span> — o'z kompaniyamda o'z
-            mahsulotimni quraman.
+            Asosan <span className="text-lime font-semibold">Kotlin</span>'da yozaman,{" "}
+            <span className="text-coral font-semibold">Rust</span>'ni endi o'zlashtiryapman. UrDU'da
+            Software Engineering o'qiyman, ARYFMA'da ishlayman.{" "}
+            <span className="text-coral font-semibold">Buyurtma olmayman</span> — butun vaqtim o'z
+            kompaniyamning mahsulotiga ketadi.
           </p>
 
           <div style={{ transitionDelay: "450ms" }} className={`mt-9 flex flex-wrap gap-4 ${el}`}>

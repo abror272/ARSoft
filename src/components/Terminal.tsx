@@ -84,15 +84,15 @@ export default function Terminal({
         break;
       case "about":
         push(
-          "Abror Raximbayev — Kotlin dasturchisi, Xorazm.",
-          "UrDU talabasi (Software Engineering). Rust o'rganyapti.",
-          "ARYFMA'da IT mutaxassis. Oldin BR Tech'da 1 yil staj."
+          "Abror Raximbayev — Kotlin dasturchisi, Xorazmdan.",
+          "UrDU talabasi (Software Engineering), Rust o'rganyapti.",
+          "ARYFMA'da texnik yordam mutaxassisi. Oldin BR Tech'da 1 yil stajyor."
         );
         break;
       case "company":
         push(
           "O'z kompaniyam bor — buyurtma qabul qilmayman.",
-          "Butun energiya: o'z mahsulotimni qurish.",
+          "Butun vaqtim va energiyam o'z mahsulotimga ketadi.",
           "Hamkorlik va g'oyalar uchun LinkedIn ochiq."
         );
         break;
@@ -154,7 +154,7 @@ export default function Terminal({
           "    |      |]",
           "    \\      /",
           "     `----'",
-          "ESPRESSO TAYYOR. Endi Rust davom etamiz!"
+          "ESPRESSO TAYYOR — endi Rust bilan davom etamiz!"
         );
         break;
       case "echo":

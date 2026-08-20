@@ -59,10 +59,10 @@ export default function Contact() {
             <SectionHead num="06" label="KANALLAR" title="GAPLASHAMIZMI?" />
             <Reveal delay={140}>
               <p className="mt-7 text-cream/70 leading-relaxed max-w-lg">
-                Ochig'ini aytaman: <span className="text-coral font-semibold">freelans buyurtma qabul qilmayman</span>{" "}
-                — o'z kompaniyamda mahsulot qurish bilan bandman. Lekin{" "}
-                <span className="text-lime font-semibold">hamkorlik, g'oya almashish</span> va Kotlin/Rust
-                haqida suhbat uchun eshik doim ochiq.
+                Ochig'ini aytaman: <span className="text-coral font-semibold">buyurtma qabul qilmayman</span>{" "}
+                — o'z kompaniyamda mahsulot yaratish bilan bandman. Lekin{" "}
+                <span className="text-lime font-semibold">hamkorlik, g'oya almashish</span> va Kotlin
+                yoki Rust haqidagi suhbat uchun eshigim doim ochiq.
               </p>
             </Reveal>
 
@@ -122,8 +122,8 @@ export default function Contact() {
 
             <Reveal delay={420}>
               <p className="mt-8 font-term text-[11px] text-sage leading-relaxed border-l-2 border-coral pl-4">
-                Javob odatda <span className="text-cream">24 soat ichida</span> — darslar va ish orasida.
-                Kotlin yoki Rust haqida bo'lsa, <span className="text-lime">tezroq ham</span>.
+                Javob odatda <span className="text-cream">24 soat ichida</span> — darslar va ish
+                orasida. Mavzu Kotlin yoki Rust bo'lsa, <span className="text-lime">undan ham tezroq</span>.
               </p>
             </Reveal>
           </div>

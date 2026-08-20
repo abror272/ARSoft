@@ -77,8 +77,9 @@ export default function Skills() {
             <SectionHead num="03" label="ASBOBLAR" title="KO'NIKMALAR XARITASI" />
             <Reveal delay={150}>
               <p className="mt-6 text-cream/60 leading-relaxed max-w-sm">
-                Foizlar — bu shunchaki raqam emas. Har biri ortida kechki debug sessiyalari,
-                StackOverflow'da yopilgan yuzlab tab va bitta ishlaydigan yechim uchun o'tgan soatlar bor.
+                Bu foizlar shunchaki raqam emas — har birining ortida kechki debug sessiyalari,
+                StackOverflow'dagi yuzlab ochiq bet va bitta ishlaydigan yechim uchun ketgan soatlar
+                turibdi.
               </p>
             </Reveal>
           </div>
@@ -125,8 +126,8 @@ export default function Skills() {
                 />
               </div>
               <p className="font-term text-[11px] text-cream/50 mt-4 leading-relaxed">
-                ownership, borrowing, lifetimes — compiler bilan har kuni yangi janjal.
-                <span className="text-coral"> Lekin g'alaba yaqin.</span>
+                ownership, borrowing, lifetimes — borrow checker bilan kunora yangi "janjal".
+                <span className="text-coral"> Lekin u asta-sekin bo'ysunib kelyapti.</span>
               </p>
             </div>
           </div>

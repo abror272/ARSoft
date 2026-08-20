@@ -65,7 +65,7 @@ export default function Terminal({
         push(
           "MAVCUD BUYRUQLAR:",
           "  about        kim u?",
-          "  company      kompaniya haqida (muhim!)",
+          "  company      kompaniya bormi?",
           "  skills       ko'nikmalar darajasi",
           "  experience   ish tajribasi",
           "  education    ta'lim",
@@ -84,33 +84,28 @@ export default function Terminal({
         break;
       case "about":
         push(
-          "Abror Raximbayev — Kotlin dasturchisi, Xorazmdan.",
-          "UrDU talabasi (Software Engineering), Rust o'rganyapti.",
+          "Abror Raximbayev — Kotlin o'rganayotgan dasturchi, Xorazmdan.",
+          "UrDU talabasi (Software Engineering), Rust'ga endigina kirib keldim.",
           "ARYFMA'da texnik yordam mutaxassisi. Oldin BR Tech'da 1 yil stajyor."
         );
         break;
       case "company":
-        push(
-          "O'z kompaniyam bor — buyurtma qabul qilmayman.",
-          "Butun vaqtim va energiyam o'z mahsulotimga ketadi.",
-          "Hamkorlik va g'oyalar uchun LinkedIn ochiq."
-        );
+        push("O'z kompaniyam yo'q — o'qish, ish va o'rganish bilan bandman.");
         break;
       case "skills":
         push(
-          "KOTLIN      [#########-] 92%",
-          "ANDROID     [########--] 88%",
-          "COMPOSE     [########--] 85%",
-          "GIT/LINUX   [########--] 88%",
-          "JAVA        [#######---] 76%",
-          "RUST        [####------] 45% (o'rganilmoqda...)"
+          "KOTLIN      [#######---] 68%",
+          "ANDROID     [######----] 58%",
+          "COMPOSE     [#####-----] 52%",
+          "GIT/GITHUB  [#######---] 72%",
+          "JAVA        [#####-----] 50%",
+          "RUST        [##--------] 20% (o'rganilmoqda...)"
         );
         break;
       case "experience":
         push(
-          "ARYFMA   — IT yordam mutaxassisi (2026.06 — hozir)",
-          "BR TECH  — Stajyor (2025.06 — 2026.06, 1 yil 1 oy)",
-          "O'z kompaniya — Asoschi (davom etmoqda)"
+          "ARYFMA   — Texnik yordam mutaxassisi (2026.06 — hozir)",
+          "BR TECH  — Stajyor (2025.06 — 2026.06, 1 yil 1 oy)"
         );
         break;
       case "education":
@@ -140,7 +135,7 @@ export default function Terminal({
         break;
       case "cat":
         if (args[0] === "sir.txt") {
-          push('"Buyurtma bermang — o\'z kompaniyam bor. Do\'stlashing — gap boshqa."');
+          push('"Katta sirlar yo\'q — lekin Rust o\'rganyapman, bu ham kichik sir emas."');
         } else {
           push(`cat: ${args[0] ?? ""}: bunday fayl topilmadi`);
         }

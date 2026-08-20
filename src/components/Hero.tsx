@@ -3,15 +3,15 @@ import { useScramble, useTashkentTime, useTypewriter } from "../hooks";
 import { ArrowDown, ArrowUpRight, Magnetic } from "../ui";
 
 const WORDS = [
-  "KOTLIN DASTURCHISI",
-  "ANDROID ISHQIBOZI",
-  "RUST O'RGANYAPMAN",
-  "KOMPANIYA ASOSCHISI",
+  "KOTLIN O'RGANYAPMAN",
+  "ANDROID YO'LIDA",
+  "RUST QIZIQUVCHISI",
+  "UrDU TALABASI",
 ];
 
 const STATS = [
   { v: "1+", l: "YIL TAJRIBA" },
-  { v: "2", l: "KOMPANIYA" },
+  { v: "2", l: "ISH JOYI" },
   { v: "∞", l: "O'RGANISH" },
 ];
 
@@ -51,7 +51,7 @@ export default function Hero() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-lime opacity-60" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-lime" />
               </span>
-              O'Z MAHSULOTIMNI YARATYAPMAN
+              O'QISH + ISH + O'RGANISH
             </span>
             <span className="text-sage hidden sm:block">XOZORASP → URGENCH, UZ</span>
             <span className="text-cream/50 tabular-nums">{time}</span>
@@ -75,11 +75,10 @@ export default function Hero() {
           </p>
 
           <p style={{ transitionDelay: "350ms" }} className={`mt-6 max-w-xl text-cream/70 text-base md:text-lg leading-relaxed ${el}`}>
-            Asosan <span className="text-lime font-semibold">Kotlin</span>'da yozaman,{" "}
-            <span className="text-coral font-semibold">Rust</span>'ni endi o'zlashtiryapman. UrDU'da
-            Software Engineering o'qiyman, ARYFMA'da ishlayman.{" "}
-            <span className="text-coral font-semibold">Buyurtma olmayman</span> — butun vaqtim o'z
-            kompaniyamning mahsulotiga ketadi.
+            <span className="text-lime font-semibold">Kotlin</span>'da Android ilovalari yozishni
+            o'rganyapman, endigina <span className="text-coral font-semibold">Rust</span>'ga qadam
+            qo'ydim. UrDU'da Software Engineering o'qiyman, ARYFMA'da ishlayman — qolgan vaqtimda
+            kod yozaman va har kuni biroz oldinga siljiyman.
           </p>
 
           <div style={{ transitionDelay: "450ms" }} className={`mt-9 flex flex-wrap gap-4 ${el}`}>
@@ -134,14 +133,14 @@ export default function Hero() {
               </p>
               <p className="pl-10">ism = <span className="text-lime">"Abror Raximbayev"</span>,</p>
               <p className="pl-10">joy = <span className="text-lime">"Xorazm, UZ"</span>,</p>
-              <p className="pl-10">stack = listOf(<span className="text-lime">"Kotlin"</span>, <span className="text-lime">"Rust"</span>),</p>
-              <p className="pl-10">rejim = Rejim.<span className="text-coral">KOMPANIYA</span></p>
+              <p className="pl-10">asosiyTil = <span className="text-lime">"Kotlin"</span>,</p>
+              <p className="pl-10">o'rganilmoqda = <span className="text-lime">"Rust"</span></p>
               <p className="pl-5">)</p>
               <p className="pl-5">
                 <span className="text-coral">while</span> (abror.ishtiyoq &gt; 0) {"{"}
               </p>
               <p className="pl-10">abror.<span className="text-cream">kodYoz</span>()</p>
-              <p className="pl-10">abror.<span className="text-cream">rustOrgan</span>() <span className="text-sage italic">// har kuni</span></p>
+              <p className="pl-10">abror.<span className="text-cream">yangiNarsaOrgan</span>()</p>
               <p className="pl-5">{"}"}</p>
               <p>{"}"}</p>
             </div>

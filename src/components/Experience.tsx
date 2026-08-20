@@ -12,19 +12,6 @@ type Job = {
 
 const JOBS: Job[] = [
   {
-    period: "2025 — HANUZGACHA",
-    duration: "DAVOM ETMOQDA",
-    company: "O'Z KOMPANIYAM",
-    role: "Asoschi va dasturchi",
-    place: "Urgench, Xorazm",
-    now: true,
-    points: [
-      "G'oyadan tayyor mahsulotgacha bo'lgan butun jarayonni o'zim boshqaraman",
-      "Barcha texnik qarorlar mening zimmamda — bu ham mas'uliyat, ham erkinlik",
-      "Asosiy reja: mahsulotni bozorga chiqarish",
-    ],
-  },
-  {
     period: "IYUN 2026 — HOZIR",
     duration: "3 OY",
     company: "ARYFMA",

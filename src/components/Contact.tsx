@@ -59,10 +59,10 @@ export default function Contact() {
             <SectionHead num="06" label="KANALLAR" title="GAPLASHAMIZMI?" />
             <Reveal delay={140}>
               <p className="mt-7 text-cream/70 leading-relaxed max-w-lg">
-                Ochig'ini aytaman: <span className="text-coral font-semibold">buyurtma qabul qilmayman</span>{" "}
-                — o'z kompaniyamda mahsulot yaratish bilan bandman. Lekin{" "}
-                <span className="text-lime font-semibold">hamkorlik, g'oya almashish</span> va Kotlin
-                yoki Rust haqidagi suhbat uchun eshigim doim ochiq.
+                Hozircha asosan o'qish va ish bilan bandman, shuning uchun katta loyihalar
+                ustida ishlashga vaqtim yetmaydi. Lekin{" "}
+                <span className="text-lime font-semibold">hamkorlik g'oyalari, tajriba almashish</span>{" "}
+                va Kotlin yoki Rust haqidagi suhbat uchun eshigim doim ochiq.
               </p>
             </Reveal>
 

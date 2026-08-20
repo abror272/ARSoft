@@ -16,7 +16,7 @@ const BOOT_LINES: { s: "ok" | "warn" | "run"; t: string }[] = [
   { s: "ok", t: "abror.os v2.5 — xorazm build" },
   { s: "ok", t: "Kotlin runtime ... yuklandi" },
   { s: "run", t: "Rust toolchain ... o'rganilmoqda" },
-  { s: "warn", t: "frilans so'rovlar bloklandi — o'z kompaniyam bor" },
+  { s: "run", t: "o'rganish rejimi: Kotlin 80% / Rust 20%" },
   { s: "ok", t: "interfeys tayyor — xush kelibsiz!" },
 ];
 

@@ -5,7 +5,7 @@ type Project = {
   num: string;
   title: string;
   year: string;
-  badge: "SHAXSIY" | "EKSPERIMENT" | "ISH";
+  badge: "O'RGANISH" | "EKSPERIMENT" | "AMALIYOT" | "SHAXSIY";
   desc: string;
   long: string;
   stack: string[];
@@ -15,43 +15,43 @@ type Project = {
 const PROJECTS: Project[] = [
   {
     num: "01",
-    title: "VAQT KUZATUVCHI",
+    title: "ESLATMALAR ILOVASI",
     year: "2025",
-    badge: "SHAXSIY",
-    desc: "Jetpack Compose'da yozilgan vaqt kuzatuvchi ilova: Pomodoro taymer, kunlik statistika va Room bazada saqlanadigan odatlar.",
-    long: "Dars, ish va Rust o'rganish orasida vaqtni boshqarish qiyinlashib qolgach, o'z vositamni yozishga qaror qildim. Compose'da toza MVVM arxitektura, Room orqali oflayn saqlash va Material 3'ning dinamik ranglari. Eng ko'p o'rgangan narsam — state hoisting va side-effect'larni to'g'ri joylashtirish.",
-    stack: ["KOTLIN", "JETPACK COMPOSE", "ROOM", "MVVM", "MATERIAL 3"],
-    stat: { v: "100%", l: "KOTLIN" },
+    badge: "O'RGANISH",
+    desc: "Kotlin'dagi ilk Android ilovam: eslatmalar yaratish, tahrirlash va o'chirish — oddiy, lekin oxirigacha ishlaydigan.",
+    long: "Birinchi haqiqiy Android ilovam. RecyclerView bilan boshlab, keyin asta-sekin Compose'ga ko'chirdim. Room bilan saqlash, MVVM arxitekturasining eng sodda ko'rinishi. Katta ilova emas, lekin aynan shunda Android'ning qanday ishlashini tushunib qoldim — Activity hayot sikli, state saqlash va layout'lar bilan ishlash shu yerda o'rgandi.",
+    stack: ["KOTLIN", "ANDROID", "ROOM", "MVVM"],
+    stat: { v: "1.0", l: "BIRINCHI VERSIYA" },
   },
   {
     num: "02",
-    title: "RUST CLI TO'PLAMI",
+    title: "RUST — SALOM, DUNYO",
     year: "2026",
     badge: "EKSPERIMENT",
-    desc: "Rust bilan birinchi jiddiy urinish: fayl tizimi va tizim ma'lumotlari bilan ishlovchi kichik CLI utilitylar to'plami.",
-    long: "Rust o'rganishning eng yaxshi yo'li — real narsa yasash. Fayl qidiruvchi, tizim monitori va log tahlilchisini yozdim. Borrow checker bilan bo'lgan har bir 'janjal' menga yangi tushuncha berdi: ownership, Result orqali xatolarni boshqarish va cargo ekotizimi. Bu endi boshlanishi — davomi albatta bo'ladi.",
-    stack: ["RUST", "CARGO", "CLAP", "SERDE"],
-    stat: { v: "45%", l: "O'ZLASHTIRILDI" },
+    desc: "Rust'dagi ilk urinishlarim: kichik CLI dasturlari, fayl o'qish va cargo bilan ishlashni o'rganish.",
+    long: "Rust'ga endigina kirib keldim va ochiq aytaman — borrow checker bilan do'st bo'lish oson emas. Hozircha oddiy CLI dasturlari yozaman: fayllarni o'qish, argumentlarni qayta ishlash, xatolarni Result bilan boshqarish. Har bir kompilyator xatosi menga yangi narsa o'rgatyapti. Bu bo'lim vaqt o'tishi bilan to'lib boradi — va'da.",
+    stack: ["RUST", "CARGO"],
+    stat: { v: "20%", l: "O'ZLASHTIRILDI" },
   },
   {
     num: "03",
-    title: "ARYFMA TOOLS",
-    year: "2026",
-    badge: "ISH",
-    desc: "ARYFMA uchun ichki yordam vositasi: ticket kuzatuvi, qurilmalar ro'yxati va xodimlar uchun tez yechim bazasi.",
-    long: "Ishga kirganimda murojaatlar qog'oz daftar va og'zaki qayd etilardi. O'zim uchun kichik qilib boshlagan vosita asta-sekin butun jamoaning ish quroliga aylandi: endi har bir murojaat qayd etiladi, qurilmalar bazada turadi, takroriy muammolar uchun tayyor yechimlar bor. Natija: muammolarga javob berish vaqti ancha qisqardi.",
-    stack: ["KOTLIN", "SQL", "REST API", "COROUTINES"],
-    stat: { v: "-40%", l: "JAVOB VAQTI" },
+    title: "XARAJAT HISOBCHI",
+    year: "2025",
+    badge: "AMALIYOT",
+    desc: "Kundalik xarajatlarni yozib borish uchun ilova: kategoriyalar, oylik hisobot va oddiy grafiklar.",
+    long: "O'zimga kerak bo'lgani uchun yozdim — oy oxirida pul qayerga ketganini bilmasdim. Kotlin'da yozilgan, SQLite'da saqlanadi, MPAndroidChart bilan oylik grafik chiqaradi. Eng qiyin joyi — sana va valyuta bilan ishlash ekan, uni ham o'z usulimda hal qildim. Do'stlarimdan bir nechtasi ham ishlatib yuribdi.",
+    stack: ["KOTLIN", "SQLITE", "MPANDROIDCHART"],
+    stat: { v: "5+", l: "DO'ST ISHLATADI" },
   },
   {
     num: "04",
-    title: "KMP SINOV",
-    year: "2025",
-    badge: "EKSPERIMENT",
-    desc: "Kotlin Multiplatform sinovi: bitta kod bazasi — Android va Desktop. Mantiq umumiy, interfeys platformaga mos.",
-    long: "Kelajak shu yo'nalishda deb hisoblayman: biznes-mantiq bir joyda, UI esa har platformada o'ziga xos. Umumiy modulda tarmoq va saqlash qatlamini yozdim, Compose Multiplatform'da desktop versiyasini sinovdan o'tkazdim. Gradle konfiguratsiyasi — alohida sarguzasht bo'ldi.",
-    stack: ["KOTLIN", "KMP", "COMPOSE MULTIPLATFORM", "GRADLE"],
-    stat: { v: "2", l: "PLATFORMA" },
+    title: "SHU SAYT",
+    year: "2026",
+    badge: "SHAXSIY",
+    desc: "Hozir ko'rib turgan saytning o'zi — React, TypeScript va Tailwind'da yozilgan portfolio.",
+    long: "Dasturchining portfolio'si — uning yuzi. Bu saytni o'zim yozdim: React va TypeScript, Tailwind CSS, o'z qo'lim bilan yig'ilgan animatsiyalar. Pastdagi terminal ham haqiqiy ishlaydi — sinab ko'ring. Bu sayt menga frontend tomonini ham yaxshiroq tushunishga yordam berdi.",
+    stack: ["REACT", "TYPESCRIPT", "TAILWIND"],
+    stat: { v: "SIZ", l: "HOZIR SHU YERDASIZ" },
   },
 ];
 
@@ -84,7 +84,8 @@ function TiltRow({ children }: { children: ReactNode }) {
 const BADGE_STYLE: Record<Project["badge"], string> = {
   SHAXSIY: "border-lime/40 text-lime",
   EKSPERIMENT: "border-coral/50 text-coral",
-  ISH: "border-cream/30 text-cream/80",
+  AMALIYOT: "border-cream/30 text-cream/80",
+  "O'RGANISH": "border-sage/50 text-sage",
 };
 
 export default function Projects() {
@@ -104,7 +105,7 @@ export default function Projects() {
         <div className="flex flex-wrap items-end justify-between gap-6 mb-14">
           <SectionHead num="04" label="QURILAYOTGAN NARSALAR" title="LOYIHALAR & EKSPERIMENTLAR" />
           <p className="font-term text-[11px] tracking-[0.25em] text-sage max-w-xs text-right hidden sm:block">
-            BUYURTMA EMAS — <span className="text-coral">O'Z G'OYALARIM.</span>
+            KATTA EMAS — <span className="text-coral">LEKIN HALOL ISHLAR.</span>
           </p>
         </div>
 

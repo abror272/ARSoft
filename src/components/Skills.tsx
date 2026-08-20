@@ -2,17 +2,17 @@ import { useCountUp, useReveal } from "../hooks";
 import { Reveal, SectionHead } from "../ui";
 
 const KOTLIN = [
-  { name: "KOTLIN", pct: 92 },
-  { name: "ANDROID SDK", pct: 88 },
-  { name: "JETPACK COMPOSE", pct: 85 },
-  { name: "COROUTINES / FLOW", pct: 84 },
+  { name: "KOTLIN", pct: 68 },
+  { name: "ANDROID SDK", pct: 58 },
+  { name: "JETPACK COMPOSE", pct: 52 },
+  { name: "COROUTINES / FLOW", pct: 45 },
 ];
 
 const SYSTEM = [
-  { name: "GIT / GIT FLOW", pct: 88 },
-  { name: "REST API / RETROFIT", pct: 82 },
-  { name: "JAVA", pct: 76 },
-  { name: "SQL / SQLITE", pct: 74 },
+  { name: "GIT / GITHUB", pct: 72 },
+  { name: "REST API / RETROFIT", pct: 60 },
+  { name: "JAVA", pct: 50 },
+  { name: "SQL / SQLITE", pct: 48 },
 ];
 
 const EXTRA = [
@@ -67,7 +67,7 @@ function Bar({
 
 export default function Skills() {
   const { ref, inView } = useReveal<HTMLDivElement>(0.2);
-  const rust = useCountUp(45, inView, 2200);
+  const rust = useCountUp(20, inView, 2200);
 
   return (
     <section id="skills" className="relative py-24 md:py-32 scroll-mt-20 bg-ink2/40 border-y border-cream/5">
@@ -77,9 +77,9 @@ export default function Skills() {
             <SectionHead num="03" label="ASBOBLAR" title="KO'NIKMALAR XARITASI" />
             <Reveal delay={150}>
               <p className="mt-6 text-cream/60 leading-relaxed max-w-sm">
-                Bu foizlar shunchaki raqam emas — har birining ortida kechki debug sessiyalari,
-                StackOverflow'dagi yuzlab ochiq bet va bitta ishlaydigan yechim uchun ketgan soatlar
-                turibdi.
+                Rostini aytaman: hali yo'lning boshidaman. Foizlar katta emas, lekin har biri
+                halol — ortida kechki debug sessiyalari va o'qilgan hujjatlar bor. Va har hafta
+                o'sib boryapti.
               </p>
             </Reveal>
           </div>
@@ -114,20 +114,20 @@ export default function Skills() {
                 <p className="font-display font-bold text-xl text-cream">
                   RUST <span className="font-term text-[10px] tracking-[0.25em] text-coral align-middle ml-2">O'RGANILMOQDA</span>
                 </p>
-                <p className="font-term text-xs text-coral tabular-nums">{rust}% — har hafta +2%</p>
+                <p className="font-term text-xs text-coral tabular-nums">{rust}% — endigina boshladim</p>
               </div>
               <div className="h-[8px] bg-cream/10 overflow-hidden">
                 <div
                   className="h-full bg-coral bar-stripes"
                   style={{
-                    width: inView ? "45%" : "0%",
+                    width: inView ? "20%" : "0%",
                     transition: "width 2200ms cubic-bezier(0.22,1,0.36,1) 400ms",
                   }}
                 />
               </div>
               <p className="font-term text-[11px] text-cream/50 mt-4 leading-relaxed">
-                ownership, borrowing, lifetimes — borrow checker bilan kunora yangi "janjal".
-                <span className="text-coral"> Lekin u asta-sekin bo'ysunib kelyapti.</span>
+                ownership, borrowing, lifetimes — hozircha ko'proq savol, kamroq javob.
+                <span className="text-coral"> Lekin har hafta bir oz tushunarli bo'lyapti.</span>
               </p>
             </div>
           </div>

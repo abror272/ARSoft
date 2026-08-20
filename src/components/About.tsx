@@ -9,13 +9,13 @@ const FACTS = [
   { k: "TA'LIM", v: "UrDU · Software Engineering" },
   { k: "HOZIRGI ISH", v: "ARYFMA · Texnik yordam mutaxassisi" },
   { k: "OLDINGI TAJRIBA", v: "BR Tech · 1 yil staj" },
-  { k: "BUYURTMA", v: "YO'Q — o'z kompaniyam bor" },
+  { k: "MAQSAD", v: "Kuchli Android dasturchisi" },
 ];
 
 const NOW = [
-  { dot: "bg-lime", text: "Rust: ownership va borrowing'ni o'zlashtiryapman" },
-  { dot: "bg-coral", text: "Kompaniyam mahsuloti — faol ishlab chiqish jarayonida" },
-  { dot: "bg-cream/60", text: "Kotlin: Compose Multiplatform'ni sinab ko'ryapman" },
+  { dot: "bg-lime", text: "Kotlin: Android asoslarini chuqurlashtiryapman" },
+  { dot: "bg-coral", text: "Rust: ownership va borrowing — eng boshidan" },
+  { dot: "bg-cream/60", text: "ARYFMA: texnik yordam va ichki tizimlar bilan ishlash" },
   { dot: "bg-sage", text: "UrDU: dasturiy muhandislik, 2025-yildan talabaman" },
 ];
 
@@ -73,11 +73,12 @@ export default function About() {
             </Reveal>
             <Reveal delay={280}>
               <p className="mt-5 text-cream/75 leading-relaxed text-base md:text-lg">
-                Eng muhimi shu: <span className="text-coral font-semibold">buyurtma olmayman</span>. O'z
-                kompaniyam bor va butun vaqtim bilan energiyamni o'z mahsulotimni yaratishga sarflayman.
-                Shu bilan birga <span className="text-coral font-semibold">Rust</span> tilini
-                o'rganyapman — xotira xavfsizligi va yuqori unumdorlik menga juda yoqadi, bu mening
-                keyingi katta qadamim.
+                Til bilish darajam haqida ochiq aytaman:{" "}
+                <span className="text-coral font-semibold">Kotlin — asosiy yo'nalishim</span>, unda
+                ancha erkinman; <span className="text-coral font-semibold">Rust</span> esa endigina
+                boshlangan sarguzasht. Hammasini bilaman deb ayta olmayman — lekin har hafta yangi
+                narsa o'rganib, o'sha bilimni amalda sinab ko'raman. Maqsadim aniq: kuchli Android
+                dasturchisi bo'lish va Rust'da mustahkam poydevor qurish.
               </p>
             </Reveal>
 

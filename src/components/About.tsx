@@ -4,7 +4,7 @@ const PORTRAIT =
   "https://image.qwenlm.ai/generated-images/6fb4950e-c079-4faf-9e61-8d98d29f8b5f/_result.png";
 
 const FACTS = [
-  { k: "ASOSIY TIL", v: "Kotlin" },
+  { k: "KUCHLI TOMONIM", v: "Kotlin / Android" },
   { k: "YANGI YO'NALISH", v: "Rust" },
   { k: "TA'LIM", v: "UrDU · Software Engineering" },
   { k: "HOZIRGI ISH", v: "ARYFMA · Texnik yordam mutaxassisi" },
@@ -21,7 +21,7 @@ const NOW = [
 
 export default function About() {
   return (
-    <section id="about" className="relative py-24 md:py-32 scroll-mt-20 bg-ink2/40 border-y border-cream/5">
+    <section id="about" className="relative py-20 md:py-32 scroll-mt-20 bg-ink2/40 border-y border-cream/5">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <div className="grid lg:grid-cols-[minmax(0,26rem)_1fr] gap-14 lg:gap-20 items-start">
           {/* portret */}
@@ -39,7 +39,7 @@ export default function About() {
                   <p className="font-term text-[10px] tracking-[0.25em] text-cream/80">
                     ABROR RAXIMBAYEV
                   </p>
-                  <p className="font-term text-[10px] tracking-[0.2em] text-sage">XOZORASP / URGENCH</p>
+                  <p className="font-term text-[10px] tracking-[0.2em] text-sage">HAZORASP / URGENCH</p>
                 </div>
               </div>
               <span className="absolute -top-5 -right-4 rotate-6 bg-coral text-cream font-display font-bold text-xs px-3 py-1.5 shadow-lg">
@@ -55,10 +55,11 @@ export default function About() {
             <Reveal delay={120}>
               <p className="mt-7 text-cream/75 leading-relaxed text-base md:text-lg">
                 Men <span className="text-cream font-semibold">Abror Raximbayev</span> — Xorazmning
-                Xazorasp tumanidanman, hozirda Urgenchda yashayman va ishlayman. Asosiy tilim —{" "}
-                <span className="text-lime font-semibold">Kotlin</span>, Android ilovalari sohasida
-                rivojlanyapman. Urganch davlat universitetida Software Engineering yo'nalishida o'qiyman.
-                Men uchun kod yozish shunchaki ish emas — muammoni topib, uni chiroyli yechish usuli.
+                Hazorasp tumanidanman, hozirda Urgenchda yashayman va ishlayman. Eng ko'p vaqt
+                ajratayotgan yo'nalishim — <span className="text-lime font-semibold">Kotlin</span> va
+                Android ilovalari. Urganch davlat universitetida Software Engineering yo'nalishida
+                o'qiyman. Men uchun kod yozish shunchaki ish emas — muammoni topib, uni chiroyli
+                yechish usuli.
               </p>
             </Reveal>
             <Reveal delay={200}>

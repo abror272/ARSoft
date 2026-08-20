@@ -34,7 +34,7 @@ export default function Hero() {
   }`;
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-28 pb-24">
+    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-28 pb-32 md:pb-24">
       {/* fon aksentlari */}
       <div className="absolute -top-40 -left-32 w-[36rem] h-[36rem] rounded-full bg-lime/[0.05] blur-3xl pointer-events-none" />
       <div className="absolute -bottom-40 -right-32 w-[40rem] h-[40rem] rounded-full bg-coral/[0.06] blur-3xl pointer-events-none" />
@@ -53,17 +53,17 @@ export default function Hero() {
               </span>
               O'QISH + ISH + O'RGANISH
             </span>
-            <span className="text-sage hidden sm:block">XOZORASP → URGENCH, UZ</span>
+            <span className="text-sage hidden sm:block">HAZORASP → URGENCH, UZ</span>
             <span className="text-cream/50 tabular-nums">{time}</span>
           </div>
 
           <h1 className="select-none">
-            <span className="block font-display font-black text-[16vw] sm:text-7xl lg:text-[6.5rem] leading-[0.98] tracking-tight text-cream">
+            <span className="block font-display font-black text-[13.5vw] sm:text-7xl lg:text-[6.5rem] leading-[0.98] tracking-tight text-cream">
               {l1}
             </span>
             <span
               data-text="RAXIMBAYEV"
-              className="glitch block font-display font-black text-[16vw] sm:text-7xl lg:text-[6.5rem] leading-[0.98] tracking-tight text-outline mt-1"
+              className="glitch block font-display font-black text-[13.5vw] sm:text-7xl lg:text-[6.5rem] leading-[0.98] tracking-tight text-outline mt-1"
             >
               {l2}
             </span>
@@ -88,7 +88,7 @@ export default function Hero() {
                 data-hover
                 className="group inline-flex items-center gap-3 bg-lime text-ink font-display font-bold text-sm px-7 py-4 hover:bg-coral hover:text-cream transition-colors duration-300"
               >
-                ISHLARIMNI KO'RISH
+                ISHLARIM BILAN TANISHING
                 <ArrowDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
               </a>
             </Magnetic>
@@ -133,7 +133,7 @@ export default function Hero() {
               </p>
               <p className="pl-10">ism = <span className="text-lime">"Abror Raximbayev"</span>,</p>
               <p className="pl-10">joy = <span className="text-lime">"Xorazm, UZ"</span>,</p>
-              <p className="pl-10">asosiyTil = <span className="text-lime">"Kotlin"</span>,</p>
+              <p className="pl-10">kuchliTil = <span className="text-lime">"Kotlin"</span>,</p>
               <p className="pl-10">o'rganilmoqda = <span className="text-lime">"Rust"</span></p>
               <p className="pl-5">)</p>
               <p className="pl-5">

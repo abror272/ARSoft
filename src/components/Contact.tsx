@@ -52,7 +52,7 @@ export default function Contact() {
     }`;
 
   return (
-    <section id="contact" className="relative py-24 md:py-32 scroll-mt-20">
+    <section id="contact" className="relative py-20 md:py-32 scroll-mt-20">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-start">
           <div>
@@ -112,7 +112,7 @@ export default function Contact() {
                   <div>
                     <p className="font-term text-[9px] tracking-[0.3em] text-sage">LOKATSIYA</p>
                     <p className="font-term text-sm md:text-base text-cream">
-                      Xazorasp, Xorazm <span className="text-sage">→</span> ish: Urgench
+                      Hazorasp, Xorazm <span className="text-sage">→</span> ish: Urgench
                     </p>
                   </div>
                   <span className="font-term text-[10px] text-sage tracking-[0.2em] tabular-nums shrink-0">TAS {time}</span>
@@ -264,7 +264,7 @@ export default function Contact() {
         <div className="border-t border-cream/10">
           <div className="mx-auto max-w-7xl px-5 md:px-8 py-5 flex flex-wrap items-center justify-between gap-3">
             <p className="font-term text-[10px] tracking-[0.2em] text-cream/40">
-              © 2026 ABROR RAXIMBAYEV — XOZORASP → URGENCH
+              © 2026 ABROR RAXIMBAYEV — HAZORASP → URGENCH
             </p>
             <p className="font-term text-[10px] tracking-[0.2em] text-cream/40">
               KOFE VA <span className="text-lime">KOTLIN</span> BILAN QURILDI

@@ -100,7 +100,7 @@ export default function Projects() {
   }, []);
 
   return (
-    <section id="projects" className="relative py-24 md:py-32 scroll-mt-20">
+    <section id="projects" className="relative py-20 md:py-32 scroll-mt-20">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <div className="flex flex-wrap items-end justify-between gap-6 mb-14">
           <SectionHead num="04" label="QURILAYOTGAN NARSALAR" title="LOYIHALAR & EKSPERIMENTLAR" />

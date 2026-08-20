@@ -70,7 +70,7 @@ export default function Skills() {
   const rust = useCountUp(20, inView, 2200);
 
   return (
-    <section id="skills" className="relative py-24 md:py-32 scroll-mt-20 bg-ink2/40 border-y border-cream/5">
+    <section id="skills" className="relative py-20 md:py-32 scroll-mt-20 bg-ink2/40 border-y border-cream/5">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <div className="grid lg:grid-cols-[1fr_2fr] gap-12 lg:gap-20">
           <div className="lg:sticky lg:top-28 self-start">

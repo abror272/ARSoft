@@ -90,7 +90,7 @@ export default function Terminal({
         );
         break;
       case "company":
-        push("O'z kompaniyam yo'q — o'qish, ish va o'rganish bilan bandman.");
+        push("Kompaniyam yo'q — hozircha o'qish va ish bilan bandman.");
         break;
       case "skills":
         push(
@@ -115,7 +115,7 @@ export default function Terminal({
         push(
           "EMAIL    abrorraximbayev272@gmail.com",
           "LINKEDIN linkedin.com/in/abrorraximbayev-909512387",
-          "MANZIL   Xazorasp, Xorazm viloyati"
+          "MANZIL   Hazorasp, Xorazm viloyati"
         );
         break;
       case "whoami":
@@ -213,7 +213,7 @@ export default function Terminal({
   };
 
   return (
-    <section id="terminal" className="relative py-24 md:py-32 scroll-mt-20 bg-ink2/40 border-y border-cream/5">
+    <section id="terminal" className="relative py-20 md:py-32 scroll-mt-20 bg-ink2/40 border-y border-cream/5">
       <div className="mx-auto max-w-5xl px-5 md:px-8">
         <div className="flex flex-wrap items-end justify-between gap-6 mb-12">
           <SectionHead num="05" label="SINOV MAYDONI" title="HAQIQIY TERMINAL" />

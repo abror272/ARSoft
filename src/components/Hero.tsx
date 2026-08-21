@@ -94,7 +94,7 @@ export default function Hero() {
             </Magnetic>
             <Magnetic className="w-full sm:w-auto">
               <a
-                href="https://www.linkedin.com/in/abrorraximbayev-909512387"
+                href="https://www.linkedin.com/in/abror-raximbayev-909512387"
                 target="_blank"
                 rel="noreferrer"
                 data-hover

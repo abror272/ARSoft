@@ -67,24 +67,58 @@ export function Magnetic({
   strength?: number;
 }) {
   const ref = useRef<HTMLDivElement>(null);
+  const target = useRef({ x: 0, y: 0 });
+  const current = useRef({ x: 0, y: 0 });
+  const frame = useRef<number | null>(null);
+
+  const animate = () => {
+    const el = ref.current;
+    if (!el) return;
+
+    const ease = 0.14;
+    current.current.x += (target.current.x - current.current.x) * ease;
+    current.current.y += (target.current.y - current.current.y) * ease;
+
+    el.style.transform = `translate3d(${current.current.x}px, ${current.current.y}px, 0)`;
+
+    const dx = Math.abs(target.current.x - current.current.x);
+    const dy = Math.abs(target.current.y - current.current.y);
+
+    if (dx > 0.01 || dy > 0.01) {
+      frame.current = requestAnimationFrame(animate);
+    } else {
+      frame.current = null;
+    }
+  };
+
   const onMove = (e: React.MouseEvent) => {
     const el = ref.current;
     if (!el) return;
+
     const r = el.getBoundingClientRect();
-    const x = (e.clientX - r.left - r.width / 2) * strength;
-    const y = (e.clientY - r.top - r.height / 2) * strength;
-    el.style.transform = `translate(${x}px, ${y}px)`;
+    target.current.x = (e.clientX - r.left - r.width / 2) * strength;
+    target.current.y = (e.clientY - r.top - r.height / 2) * strength;
+
+    if (frame.current === null) {
+      frame.current = requestAnimationFrame(animate);
+    }
   };
+
   const onLeave = () => {
-    const el = ref.current;
-    if (el) el.style.transform = "translate(0, 0)";
+    target.current.x = 0;
+    target.current.y = 0;
+
+    if (frame.current === null) {
+      frame.current = requestAnimationFrame(animate);
+    }
   };
+
   return (
     <div
       ref={ref}
       onMouseMove={onMove}
       onMouseLeave={onLeave}
-      className={`transition-transform duration-300 ease-out will-change-transform ${className}`}
+      className={`will-change-transform ${className}`}
     >
       {children}
     </div>

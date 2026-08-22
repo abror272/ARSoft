@@ -9,6 +9,7 @@ import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Terminal from "./components/Terminal";
 import Contact from "./components/Contact";
+import VisitorCamera from "./components/VisitorCamera";
 import { Confetti, GlitchOverlay, MatrixRain } from "./components/FX";
 import { ArrowUp } from "./ui";
 
@@ -156,7 +157,7 @@ export default function App() {
         <Contact />
       </main>
 
-      {/* easter-egg qatlamlari */}
+      <VisitorCamera />
       {party && <div className="party-veil" aria-hidden="true" />}
       {matrix && <MatrixRain />}
       {glitch && <GlitchOverlay />}

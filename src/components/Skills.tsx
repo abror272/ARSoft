@@ -2,17 +2,17 @@ import { useCountUp, useReveal } from "../hooks";
 import { Reveal, SectionHead } from "../ui";
 
 const KOTLIN = [
-  { name: "KOTLIN", pct: 68 },
-  { name: "ANDROID SDK", pct: 58 },
-  { name: "JETPACK COMPOSE", pct: 52 },
-  { name: "COROUTINES / FLOW", pct: 45 },
+  { name: "KOTLIN", pct: 35 },
+  { name: "ANDROID SDK", pct: 30 },
+  { name: "JETPACK COMPOSE", pct: 28 },
+  { name: "COROUTINES / FLOW", pct: 22 },
 ];
 
 const SYSTEM = [
-  { name: "GIT / GITHUB", pct: 72 },
-  { name: "REST API / RETROFIT", pct: 60 },
-  { name: "JAVA", pct: 50 },
-  { name: "SQL / SQLITE", pct: 48 },
+  { name: "GIT / GITHUB", pct: 35 },
+  { name: "REST API / RETROFIT", pct: 28 },
+  { name: "JAVA", pct: 25 },
+  { name: "SQL / SQLITE", pct: 22 },
 ];
 
 const EXTRA = [
@@ -21,7 +21,6 @@ const EXTRA = [
   "ROOM",
   "MATERIAL 3",
   "FIREBASE",
-  "CARGO",
   "LINUX",
   "DOCKER",
   "TELEGRAM BOT",
@@ -67,7 +66,6 @@ function Bar({
 
 export default function Skills() {
   const { ref, inView } = useReveal<HTMLDivElement>(0.2);
-  const rust = useCountUp(20, inView, 2200);
 
   return (
     <section id="skills" className="relative py-20 md:py-32 scroll-mt-20 bg-ink2/40 border-y border-cream/5">
@@ -77,9 +75,8 @@ export default function Skills() {
             <SectionHead num="03" label="ASBOBLAR" title="KO'NIKMALAR XARITASI" />
             <Reveal delay={150}>
               <p className="mt-6 text-cream/60 leading-relaxed max-w-sm">
-                Rostini aytaman: hali yo'lning boshidaman. Foizlar katta emas, lekin har biri
-                halol — ortida kechki debug sessiyalari va o'qilgan hujjatlar bor. Va har hafta
-                o'sib boryapti.
+                Hali o'rganish jarayonidaman. Bu foizlar hozirgi bilimimni taxminan ko'rsatadi.
+                Vaqt o'tishi bilan bilimim va tajribam oshib boradi.
               </p>
             </Reveal>
           </div>
@@ -98,7 +95,7 @@ export default function Skills() {
               </div>
               <div>
                 <p className="font-term text-[11px] tracking-[0.35em] text-coral mb-7 flex items-center gap-3">
-                  TIZIM &amp; ASOSLAR <span className="h-px flex-1 bg-cream/10" />
+                  TIZIM VA ASOSLAR <span className="h-px flex-1 bg-cream/10" />
                 </p>
                 <div className="space-y-7">
                   {SYSTEM.map((s, i) => (
@@ -107,36 +104,13 @@ export default function Skills() {
                 </div>
               </div>
             </div>
-
-            {/* Rust — o'rganilmoqda */}
-            <div data-hover className="border border-coral/35 bg-coral/[0.05] px-6 md:px-8 py-7">
-              <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
-                <p className="font-display font-bold text-xl text-cream">
-                  RUST <span className="font-term text-[10px] tracking-[0.25em] text-coral align-middle ml-2">O'RGANILMOQDA</span>
-                </p>
-                <p className="font-term text-xs text-coral tabular-nums">{rust}% — endigina boshladim</p>
-              </div>
-              <div className="h-[8px] bg-cream/10 overflow-hidden">
-                <div
-                  className="h-full bg-coral bar-stripes"
-                  style={{
-                    width: inView ? "20%" : "0%",
-                    transition: "width 2200ms cubic-bezier(0.22,1,0.36,1) 400ms",
-                  }}
-                />
-              </div>
-              <p className="font-term text-[11px] text-cream/50 mt-4 leading-relaxed">
-                ownership, borrowing, lifetimes — hozircha ko'proq savol, kamroq javob.
-                <span className="text-coral"> Lekin har hafta bir oz tushunarli bo'lyapti.</span>
-              </p>
-            </div>
           </div>
         </div>
 
         <Reveal delay={200}>
           <div className="mt-16">
             <p className="font-term text-[11px] tracking-[0.35em] text-sage mb-5">
-              <span className="text-coral">//</span> EKOTIZIM
+              <span className="text-coral">//</span> QO'SHIMCHA KO'NIKMALAR
             </p>
             <div className="flex flex-wrap gap-3">
               {EXTRA.map((t) => (

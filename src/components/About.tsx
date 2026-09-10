@@ -4,11 +4,11 @@ const PORTRAIT =
   "https://image.qwenlm.ai/generated-images/6fb4950e-c079-4faf-9e61-8d98d29f8b5f/_result.png";
 
 const FACTS = [
-  { k: "ASOSIY YO'NALISH", v: "Kotlin / Android" },
-  { k: "TA'LIM", v: "UrDU · Software Engineering" },
+  { k: "ASOSIY YO'NALISH", v: "Kotlin Multiplatform" },
+  { k: "TA'LIM", v: "UrDU · Dastur Injinering" },
   { k: "HOZIRGI ISH", v: "ARYFMA · Texnik yordam mutaxassisi" },
   { k: "OLDINGI TAJRIBA", v: "BR Tech · 1 yil staj" },
-  { k: "MAQSAD", v: "Android dasturchisi bo'lish" },
+  { k: "MAQSAD", v: "Senior full stack developer bo'lish" },
 ];
 
 const PRINCIPLES = [
@@ -18,10 +18,10 @@ const PRINCIPLES = [
 ];
 
 const NOW = [
-  { dot: "bg-lime", text: "Kotlin: Android asoslarini o'rganyapman" },
-  { dot: "bg-coral", text: "Android: Jetpack va Compose bilan ishlayapman" },
+  { dot: "bg-lime", text: "Kotlin: Multiplatform asoslarini o'rganyapman" },
+  { dot: "bg-coral", text: "Kotlin Multiplatform: Compose Multiplatform bilan ishlayapman" },
   { dot: "bg-cream/60", text: "ARYFMA: texnik yordam va ichki tizimlar bilan ishlayman" },
-  { dot: "bg-sage", text: "UrDU: Software Engineering yo'nalishida o'qiyman" },
+  { dot: "bg-sage", text: "UrDU: Dastur Injinering yo'nalishida o'qiyman" },
 ];
 
 export default function About() {
@@ -41,7 +41,7 @@ export default function About() {
                 <div className="absolute inset-0 bg-lime/10 mix-blend-overlay pointer-events-none" />
                 <div className="absolute bottom-0 inset-x-0 bg-ink/85 backdrop-blur px-4 sm:px-5 py-3 flex items-center justify-between gap-3 border-t border-cream/10">
                   <p className="font-term text-[9px] sm:text-[10px] tracking-[0.12em] sm:tracking-[0.25em] text-cream/80 truncate">ABROR RAXIMBAYEV</p>
-                  <p className="font-term text-[9px] sm:text-[10px] tracking-[0.08em] sm:tracking-[0.2em] text-sage shrink-0">HAZORASP / URGENCH</p>
+                  <p className="font-term text-[9px] sm:text-[10px] tracking-[0.08em] sm:tracking-[0.2em] text-sage shrink-0">HAZORASP / URGANCH</p>
                 </div>
               </div>
               <span className="absolute -top-5 -right-3 sm:-right-4 rotate-6 bg-coral text-cream font-display font-bold text-[11px] sm:text-xs px-3 py-1.5 shadow-lg">UrDU '25+</span>
@@ -52,7 +52,7 @@ export default function About() {
             <SectionHead num="01" title="O'ZIM HAQIMDA" />
             <Reveal delay={120}>
               <p className="mt-7 text-cream/75 leading-relaxed text-[15px] md:text-lg">
-                Men <span className="text-cream font-semibold">Abror Raximbayev</span>. Xorazmning Hazorasp tumanida tug'ilib o'sganman va hozir Urgenchda yashab, o'qib va ishlayapman. Hozir asosiy e'tiborimni <span className="text-lime font-semibold">Kotlin va Android</span>'ga qaratganman. Urganch davlat universitetida Software Engineering yo'nalishida o'qiyman.
+                Men <span className="text-cream font-semibold">Abror Raximbayev</span>. Xorazmning Hazorasp tumanida tug'ilib o'sganman va hozir Urganchda yashab, o'qiyman va ishlayman. Hozir asosiy e'tiborimni <span className="text-lime font-semibold">Kotlin</span>ga qaratganman. Urganch davlat universitetida Dastur Injinering yo'nalishida o'qiyman.
               </p>
             </Reveal>
             <Reveal delay={200}>
@@ -62,7 +62,7 @@ export default function About() {
             </Reveal>
             <Reveal delay={280}>
               <p className="mt-5 text-cream/75 leading-relaxed text-[15px] md:text-lg">
-                Hozir <span className="text-lime font-semibold">Kotlin</span>ni o'rganyapman va Android ilovalar yozishni mashq qilyapman. Hali ko'p narsani o'rganishim kerak, shuning uchun o'zimni tajribali dasturchi deb hisoblamayman. Maqsadim — Android dasturchisi bo'lib, bilim va tajribamni asta-sekin oshirish.
+                Hozir <span className="text-lime font-semibold">Kotlin</span>ni o'rganyapman va Kotlin Multiplatform loyihalar ustida mashq qilyapman. Hali ko'p narsani o'rganishim kerak, shuning uchun o'zimni tajribali dasturchi deb hisoblamayman. Maqsadim — Senior full stack developer bo'lib, bilim va tajribamni asta-sekin oshirish.
               </p>
             </Reveal>
 

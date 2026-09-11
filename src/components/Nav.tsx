@@ -1,20 +1,14 @@
 import { useEffect, useState } from "react";
 import { useTashkentTime } from "../hooks";
-
-const LINKS = [
-  { href: "#about", label: "HAQIMDA" },
-  { href: "#experience", label: "TAJRIBA" },
-  { href: "#skills", label: "KO'NIKMALAR" },
-  { href: "#projects", label: "LOYIHALAR" },
-  { href: "#terminal", label: "TERMINAL" },
-  { href: "#contact", label: "ALOQA" },
-];
+import { LangSwitch, useLang } from "../i18n";
 
 export default function Nav() {
+  const { t } = useLang();
   const [progress, setProgress] = useState(0);
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const time = useTashkentTime();
+  const links = t.nav.links;
 
   useEffect(() => {
     const onScroll = () => {
@@ -43,17 +37,29 @@ export default function Nav() {
           />
         </div>
         <nav className="mx-auto max-w-7xl px-5 md:px-8 h-16 flex items-center justify-between">
-          <a href="#top" data-hover className="flex items-center gap-2 group">
-            <span className="font-display font-bold text-lg text-lime border border-lime/60 px-2 py-0.5 group-hover:bg-lime group-hover:text-ink transition-colors duration-300">
-              AR<span className="caret">_</span>
+          <a href="#top" data-hover className="flex items-center gap-2.5 group">
+            <span className="transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110">
+              <svg viewBox="0 0 48 48" className="w-8 h-8" aria-hidden="true">
+                <defs>
+                  <linearGradient id="navlogo" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stopColor="#C6F24E" />
+                    <stop offset="55%" stopColor="#8FD469" />
+                    <stop offset="100%" stopColor="#3E9B63" />
+                  </linearGradient>
+                </defs>
+                <rect width="48" height="48" rx="11" fill="url(#navlogo)" />
+                <path d="M9 39 24 6l15 33h-7.2L24 20l-7.8 19H9Z" fill="#0B1210" />
+                <rect x="17.5" y="28" width="13" height="4.6" fill="#0B1210" />
+                <rect x="33" y="30" width="6" height="9" fill="#0B1210" className="logo-blink" />
+              </svg>
             </span>
             <span className="font-term text-[10px] text-sage hidden sm:block tracking-[0.25em]">
-              v2.5
+              {t.contact.footer.version}
             </span>
           </a>
 
           <div className="hidden lg:flex items-center gap-6 xl:gap-7">
-            {LINKS.map((l, i) => (
+            {links.map((l, i) => (
               <a
                 key={l.href}
                 href={l.href}
@@ -65,6 +71,7 @@ export default function Nav() {
                 <span className="absolute -bottom-1 left-0 h-px w-0 bg-lime group-hover:w-full transition-all duration-300" />
               </a>
             ))}
+            <LangSwitch />
             <span className="font-term text-[11px] text-sage border border-cream/15 px-2.5 py-1 tracking-[0.15em] tabular-nums">
               TAS {time}
             </span>
@@ -73,7 +80,7 @@ export default function Nav() {
           <button
             onClick={() => setOpen(!open)}
             data-hover
-            aria-label="Menyu"
+            aria-label={t.nav.menu}
             className="lg:hidden flex flex-col gap-1.5 p-2"
           >
             <span className={`block h-0.5 w-6 bg-lime transition-transform duration-300 ${open ? "translate-y-2 rotate-45" : ""}`} />
@@ -90,7 +97,7 @@ export default function Nav() {
         }`}
       >
         <div className="h-full flex flex-col justify-center px-8">
-          {LINKS.map((l, i) => (
+          {links.map((l, i) => (
             <a
               key={l.href}
               href={l.href}
@@ -104,9 +111,12 @@ export default function Nav() {
               {l.label}
             </a>
           ))}
-          <p className="font-term text-xs text-sage mt-8 tracking-[0.25em] tabular-nums">
-            TOSHKENT — {time}
-          </p>
+          <div className={`flex items-center justify-between gap-4 mt-8 transition-all duration-500 ${open ? "opacity-100" : "opacity-0"}`}>
+            <LangSwitch />
+            <p className="font-term text-xs text-sage tracking-[0.25em] tabular-nums">
+              {t.nav.tashkent} — {time}
+            </p>
+          </div>
         </div>
       </div>
     </>

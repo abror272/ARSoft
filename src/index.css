@@ -268,3 +268,15 @@ body {
 .floaty {
   animation: floaty 6s ease-in-out infinite;
 }
+
+@keyframes logo-blink-kf {
+  0%, 55% { opacity: 1; }
+  56%, 100% { opacity: 0.12; }
+}
+.logo-blink {
+  animation: logo-blink-kf 1.4s steps(1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-blink { animation: none; }
+}

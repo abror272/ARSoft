@@ -10,15 +10,9 @@ import Projects from "./components/Projects";
 import Terminal from "./components/Terminal";
 import Contact from "./components/Contact";
 import { Confetti, GlitchOverlay, MatrixRain } from "./components/FX";
+import Logo from "./components/Logo";
 import { ArrowUp } from "./ui";
-
-const BOOT_LINES: { s: "ok" | "warn" | "run"; t: string }[] = [
-  { s: "ok", t: "abror.os v2.5 — xorazm build" },
-  { s: "ok", t: "Kotlin runtime ... yuklandi" },
-  { s: "run", t: "Rust toolchain ... o'rganilmoqda" },
-  { s: "run", t: "o'rganish rejimi: Kotlin 80% / Rust 20%" },
-  { s: "ok", t: "interfeys tayyor — xush kelibsiz!" },
-];
+import { LangProvider, useLang } from "./i18n";
 
 const KONAMI = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
 
@@ -37,22 +31,48 @@ function BackToTop() {
   );
 }
 
-export default function App() {
-  const [booted, setBooted] = useState(false);
+function BootScreen({ onDone }: { onDone: () => void }) {
+  const { t } = useLang();
   const [bootProgress, setBootProgress] = useState(0);
   const [visibleLines, setVisibleLines] = useState(0);
+
+  useEffect(() => {
+    const lineTimer = window.setInterval(() => setVisibleLines((v) => Math.min(v + 1, t.boot.lines.length)), 240);
+    const progressTimer = window.setInterval(() => setBootProgress((p) => Math.min(100, p + Math.random() * 9 + 3)), 90);
+    const finish = window.setTimeout(onDone, 2100);
+    return () => { window.clearInterval(lineTimer); window.clearInterval(progressTimer); window.clearTimeout(finish); };
+  }, [onDone, t.boot.lines.length]);
+
+  return (
+    <div className="fixed inset-0 z-[100] bg-ink flex items-center justify-center p-6">
+      <div className="w-full max-w-xl">
+        <div className="flex items-center gap-4">
+          <Logo className="w-12 h-12 md:w-14 md:h-14" />
+          <div>
+            <p className="font-display font-black text-4xl md:text-6xl text-cream tracking-tight leading-none">ABROR<span className="text-lime">.OS</span></p>
+            <p className="font-term text-[11px] text-sage tracking-[0.15em] sm:tracking-[0.3em] mt-2">{t.boot.subtitle}</p>
+          </div>
+        </div>
+        <div className="font-term text-xs md:text-sm space-y-1.5 min-h-[9.5rem] mt-8 mb-8">
+          {t.boot.lines.slice(0, visibleLines).map((l, i) => <p key={i}><span className={l.s === "run" ? "text-cream/60" : "text-lime"}>{l.s === "ok" ? "[  OK  ]" : "[..  ]"}</span>{" "}<span className="text-cream/80">{l.t}</span></p>)}
+          <span className="caret text-lime">▊</span>
+        </div>
+        <div className="h-[3px] bg-cream/10 overflow-hidden"><div className="h-full bg-lime transition-all duration-200" style={{ width: `${bootProgress}%` }} /></div>
+        <div className="flex flex-wrap justify-between items-center gap-2 mt-3">
+          <p className="font-term text-[11px] text-sage tabular-nums">{t.boot.progress} {Math.min(99, Math.floor(bootProgress))}%</p>
+          <button onClick={onDone} data-hover className="font-term text-[11px] tracking-[0.2em] text-cream/50 hover:text-lime transition-colors border border-cream/15 hover:border-lime px-3 py-1.5">{t.boot.skip}</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Site() {
+  const [booted, setBooted] = useState(false);
   const [matrix, setMatrix] = useState(false);
   const [party, setParty] = useState(false);
   const [glitch, setGlitch] = useState(false);
   const [confetti, setConfetti] = useState(false);
-
-  useEffect(() => {
-    if (booted) return;
-    const lineTimer = window.setInterval(() => setVisibleLines((v) => Math.min(v + 1, BOOT_LINES.length)), 240);
-    const progressTimer = window.setInterval(() => setBootProgress((p) => Math.min(100, p + Math.random() * 9 + 3)), 90);
-    const finish = window.setTimeout(() => setBooted(true), 2100);
-    return () => { window.clearInterval(lineTimer); window.clearInterval(progressTimer); window.clearTimeout(finish); };
-  }, [booted]);
 
   useEffect(() => {
     const buf: string[] = [];
@@ -70,23 +90,7 @@ export default function App() {
   const doMatrix = () => { setMatrix(true); window.setTimeout(() => setMatrix(false), 6000); };
   const doParty = () => { setConfetti(true); setParty((p) => !p); };
 
-  if (!booted) return (
-    <div className="fixed inset-0 z-[100] bg-ink flex items-center justify-center p-6">
-      <div className="w-full max-w-xl">
-        <p className="font-display font-black text-4xl md:text-6xl text-cream tracking-tight">ABROR<span className="text-lime">.OS</span></p>
-        <p className="font-term text-[11px] text-sage tracking-[0.15em] sm:tracking-[0.3em] mt-2 mb-8">PORTFOLIO INTERFEYSI — XORAZM BUILD</p>
-        <div className="font-term text-xs md:text-sm space-y-1.5 min-h-[9.5rem]">
-          {BOOT_LINES.slice(0, visibleLines).map((l, i) => <p key={i}><span className={l.s === "warn" ? "text-coral" : l.s === "run" ? "text-cream/60" : "text-lime"}>{l.s === "ok" ? "[  OK  ]" : l.s === "warn" ? "[ WARN ]" : "[..  ]"}</span>{" "}<span className="text-cream/80">{l.t}</span></p>)}
-          <span className="caret text-lime">▊</span>
-        </div>
-        <div className="mt-6 h-[3px] bg-cream/10 overflow-hidden"><div className="h-full bg-lime transition-all duration-200" style={{ width: `${bootProgress}%` }} /></div>
-        <div className="flex flex-wrap justify-between items-center gap-2 mt-3">
-          <p className="font-term text-[11px] text-sage tabular-nums">YUKLANMOQDA... {Math.min(99, Math.floor(bootProgress))}%</p>
-          <button onClick={() => setBooted(true)} data-hover className="font-term text-[11px] tracking-[0.2em] text-cream/50 hover:text-lime transition-colors border border-cream/15 hover:border-lime px-3 py-1.5">O'TKAZIB YUBORISH →</button>
-        </div>
-      </div>
-    </div>
-  );
+  if (!booted) return <BootScreen onDone={() => setBooted(true)} />;
 
   return (
     <div id="top" className="relative min-h-screen bg-ink text-cream font-body">
@@ -94,5 +98,13 @@ export default function App() {
       <main className="relative z-10"><Hero /><About /><Experience /><Skills /><Projects /><Terminal onHack={doHack} onMatrix={doMatrix} onParty={doParty} /><Contact /></main>
       {party && <div className="party-veil" aria-hidden="true" />}{matrix && <MatrixRain />}{glitch && <GlitchOverlay />}{confetti && <Confetti />}<BackToTop />
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <LangProvider>
+      <Site />
+    </LangProvider>
   );
 }

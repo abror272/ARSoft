@@ -33,10 +33,10 @@ export default function Terminal({ onHack, onMatrix, onParty }: { onHack: () => 
     switch (name) {
       case "": break;
       case "help": push("BUYRUQLAR:", "  about        men haqimda", "  skills       ko'nikmalar", "  experience   tajriba", "  education    ta'lim", "  contact      aloqa", "  whoami       mehmon ma'lumoti", "  date         Toshkent vaqti", "  ls           fayllar", "  cat sir.txt  kichik sir", "  kofe         kofe", "  echo ...     takrorlash", "  hack         kichik hazil", "  matrix       Matrix rejimi", "  party        rangli rejim", "  clear        ekranni tozalash"); break;
-      case "about": push("Abror Raximbayev — Kotlin o'rganayotgan dasturchi.", "UrDU talabasi (Dastur Injinering).", "ARYFMA'da texnik yordam mutaxassisi. Oldin BR Tech'da stajyor bo'lganman."); break;
+      case "about": push("Abror Raximbayev — Kotlin o'rganayotgan dasturchi.", "UrDU talabasi (Software Engineering).", "ARYFMA'da texnik yordam mutaxassisi. Oldin BR Tech'da stajyor bo'lganman."); break;
       case "skills": push("KOTLIN      [###-------] 35%", "ANDROID     [###-------] 30%", "COMPOSE     [###-------] 28%", "GIT/GITHUB  [###-------] 35%", "JAVA        [##--------] 25%", "SQL/SQLITE  [##--------] 22%"); break;
       case "experience": push("ARYFMA   — Texnik yordam mutaxassisi (2026.06 — hozir)", "BR TECH  — Stajyor (2025.06 — 2026.06)"); break;
-      case "education": push("Urganch davlat universiteti — Dastur Injinering (2025 — hozir)"); break;
+      case "education": push("Urganch davlat universiteti — Software Engineering (2025 — hozir)"); break;
       case "contact": push("EMAIL    abrorraximbayev272@gmail.com", "LINKEDIN linkedin.com/in/abrorraximbayev-909512387", "MANZIL   Hazorasp, Xorazm viloyati"); break;
       case "whoami": push("mehmon@portfolio — xush kelibsiz :)"); break;
       case "date": push(`TOSHKENT: ${new Intl.DateTimeFormat("en-GB", { dateStyle: "full", timeStyle: "medium", timeZone: "Asia/Tashkent" }).format(new Date())}`); break;

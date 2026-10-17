@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import Cursor from "./components/Cursor";
 import ParticleField from "./components/ParticleField";
 import Nav from "./components/Nav";
@@ -105,6 +107,8 @@ export default function App() {
   return (
     <LangProvider>
       <Site />
+      <Analytics />
+      <SpeedInsights />
     </LangProvider>
   );
 }

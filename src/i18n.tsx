@@ -5,11 +5,6 @@ export const LANGS: Lang[] = ["uz", "en", "ru"];
 
 const uz = {
   meta: { title: "Abror Raximbayev — Kotlin Developer | Xorazm" },
-  globe: {
-    city: "XIVA",
-    region: "XORAZM · 41.38°N 60.36°E",
-    note: "Al-Xorazmiy vatani — «algoritm» so'zi uning ismidan",
-  },
   boot: {
     subtitle: "PORTFOLIO INTERFEYSI — XORAZM BUILD",
     progress: "YUKLANMOQDA...",
@@ -289,11 +284,6 @@ export type Dict = typeof uz;
 
 const en: Dict = {
   meta: { title: "Abror Raximbayev — Kotlin Developer | Khorezm" },
-  globe: {
-    city: "KHIVA",
-    region: "KHOREZM · 41.38°N 60.36°E",
-    note: "Homeland of Al-Khwarizmi — the word «algorithm» comes from his name",
-  },
   boot: {
     subtitle: "PORTFOLIO INTERFACE — KHOREZM BUILD",
     progress: "LOADING...",
@@ -570,11 +560,6 @@ const en: Dict = {
 
 const ru: Dict = {
   meta: { title: "Аброр Рахимбаев — Kotlin Developer | Хорезм" },
-  globe: {
-    city: "ХИВА",
-    region: "ХОРЕЗМ · 41.38°N 60.36°E",
-    note: "Родина аль-Хорезми — слово «алгоритм» происходит от его имени",
-  },
   boot: {
     subtitle: "ПОРТФОЛИО-ИНТЕРФЕЙС — ХОРЕЗМ BUILD",
     progress: "ЗАГРУЗКА...",

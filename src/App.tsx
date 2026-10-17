@@ -1,11 +1,10 @@
-import { Suspense, lazy, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import Cursor from "./components/Cursor";
 import ParticleField from "./components/ParticleField";
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
-import KhorezmGate from "./components/KhorezmGate";
 import About from "./components/About";
 import Experience from "./components/Experience";
 import Skills from "./components/Skills";
@@ -18,9 +17,6 @@ import { ArrowUp } from "./ui";
 import { LangProvider, useLang } from "./i18n";
 
 const KONAMI = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
-
-// Three.js og'ir (~170 KB gzip) — alohida chunk'da yuklanadi
-const GlobeField = lazy(() => import("./components/GlobeField"));
 
 function BackToTop() {
   const [show, setShow] = useState(false);
@@ -100,8 +96,8 @@ function Site() {
 
   return (
     <div id="top" className="relative min-h-screen bg-ink text-cream font-body">
-      <Cursor /><Suspense fallback={<ParticleField />}><GlobeField fallback={<ParticleField />} /></Suspense><div className="bg-grid fixed inset-0 z-0 pointer-events-none" aria-hidden="true" /><div className="noise" aria-hidden="true" /><Nav />
-      <main className="relative z-10"><Hero /><KhorezmGate /><About /><Experience /><Skills /><Projects /><Terminal onHack={doHack} onMatrix={doMatrix} onParty={doParty} /><Contact /></main>
+      <Cursor /><ParticleField /><div className="bg-grid fixed inset-0 z-0 pointer-events-none" aria-hidden="true" /><div className="noise" aria-hidden="true" /><Nav />
+      <main className="relative z-10"><Hero /><About /><Experience /><Skills /><Projects /><Terminal onHack={doHack} onMatrix={doMatrix} onParty={doParty} /><Contact /></main>
       {party && <div className="party-veil" aria-hidden="true" />}{matrix && <MatrixRain />}{glitch && <GlitchOverlay />}{confetti && <Confetti />}<BackToTop />
     </div>
   );

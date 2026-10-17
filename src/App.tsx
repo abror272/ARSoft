@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Suspense, lazy, useEffect, useState } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import Cursor from "./components/Cursor";
@@ -17,6 +17,9 @@ import { ArrowUp } from "./ui";
 import { LangProvider, useLang } from "./i18n";
 
 const KONAMI = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
+
+// Three.js og'ir (~170 KB gzip) — alohida chunk'da yuklanadi
+const ThreeField = lazy(() => import("./components/ThreeField"));
 
 function BackToTop() {
   const [show, setShow] = useState(false);
@@ -96,7 +99,7 @@ function Site() {
 
   return (
     <div id="top" className="relative min-h-screen bg-ink text-cream font-body">
-      <Cursor /><ParticleField /><div className="bg-grid fixed inset-0 z-0 pointer-events-none" aria-hidden="true" /><div className="noise" aria-hidden="true" /><Nav />
+      <Cursor /><Suspense fallback={<ParticleField />}><ThreeField fallback={<ParticleField />} /></Suspense><div className="bg-grid fixed inset-0 z-0 pointer-events-none" aria-hidden="true" /><div className="noise" aria-hidden="true" /><Nav />
       <main className="relative z-10"><Hero /><About /><Experience /><Skills /><Projects /><Terminal onHack={doHack} onMatrix={doMatrix} onParty={doParty} /><Contact /></main>
       {party && <div className="party-veil" aria-hidden="true" />}{matrix && <MatrixRain />}{glitch && <GlitchOverlay />}{confetti && <Confetti />}<BackToTop />
     </div>

@@ -18,8 +18,7 @@ export default function KhorezmGate() {
       className="relative flex h-screen items-center justify-center px-6"
     >
       <Reveal className="w-full max-w-xl">
-        <div className="relative mx-auto text-center">
-          <div className="pointer-events-none absolute inset-x-0 top-1/2 h-[26rem] -translate-y-1/2 bg-[radial-gradient(ellipse_at_center,rgba(7,15,12,0.92)_0%,rgba(7,15,12,0.6)_45%,transparent_72%)]" />
+        <div className="relative mx-auto text-center [text-shadow:0_2px_18px_rgba(7,15,12,0.95),0_0_46px_rgba(7,15,12,0.85)]">
           <div className="relative">
             <div className="mx-auto mb-5 h-12 w-px bg-gradient-to-b from-transparent via-lime/70 to-transparent" />
             <p className="font-term text-[9px] tracking-[0.32em] text-lime sm:text-[10px]">
